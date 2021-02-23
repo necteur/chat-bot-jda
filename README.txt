@@ -1,3 +1,6 @@
+❗❗❗❗❗❗❗❗❗❗❗❗❗❗❗❗❗❗❗❗ /!\ /!\ /!\ /!\ /!\ /!\ (☞ﾟヮﾟ)☞
+LISEZ MOI LA C'EST IMPORTANT JE SAIS QUE TOUT LE MONDE ME ZAP (¬_¬ ) MAIS SANS LES INFORMATIONS QUE CONTIENENT LE DOCUMENT VOUS NE POURREZ PAS UTILISEE LE CHATBOT MERCI
+❗❗❗❗❗❗❗❗❗❗❗❗❗❗❗❗❗❗❗❗ /!\ /!\ /!\ /!\ /!\ /!\
 # chat-bot-jda
 chat bot project NSI
 but créer un chat bot qui pourra présenter le lycée JDA
