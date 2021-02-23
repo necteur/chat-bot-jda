@@ -1,0 +1,26 @@
+{"intents":[
+    {"tag": "bonjour",
+    "patterns":["bonjour","salut","slt"],
+    "reponses": ["Bonjour","En quoi puis je vous etre utile"],
+    "context_set":""},
+
+    {"tag":"aurevoir",
+    "patterns":["bonne journée","aurevoir","bye"],
+    "reponses":["aurevoir et bonne journee","passe une bonne journee"],
+    "context_set":""},
+
+    {"tag":"comment vas tu",
+    "patterns":["comment ça va","comment vas tu","sa gehts","bien et toi","ça va","ca va"],
+    "reponses":["bien et vous","ca va et vous","ca va"]},
+
+    {"tag":"connait-tu",
+    "patterns":["connais tu", "tu connais"],
+    "reponses":["oui je connais","evidemment que je connais"],
+    "context_set":""},
+
+    {"tag":"restaurant",
+    "patterns":["a quelle heure ouvre le restaurant"],
+    "reponses":["il ouvre a 18h 30 et ferme a 00h30"],
+    "context_set":""}
+]
+}
