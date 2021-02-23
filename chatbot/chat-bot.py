@@ -25,7 +25,7 @@ for intent in data["intents"]: #on parcour tout le data
         docs_x.append(wrds)
         docs_y.append(intent["tag"])
 
-        if intent["tag"] not in labels:
+        if intent["tag"] not in labels: # ajout de tout les types de donné pour qu'il soit par la suite traité
             labels.append(intent["tag"])
 
 words = [stemmer.stem(w.lower()) for w in words if w not in "?"]
