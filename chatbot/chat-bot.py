@@ -25,11 +25,11 @@ for intent in data["intents"]:      #on parcour tout le data (ici des dictionnai
         docs_x.append(wrds)     
         docs_y.append(intent["tag"])
 
-        if intent["tag"] not in labels: # ajout de tout les types de donné pour qu'il soit par la suite traité
+        if intent["tag"] not in labels: # ajout de tout les types de donné pour qu'il soit par la suite traité et que aucun ne soit oublier
             labels.append(intent["tag"])
 
-words = [stemmer.stem(w.lower()) for w in words if w not in "?"] #permet d'avoir les mots clefs
-words = sorted(list(set(words)))
+words = [stemmer.stem(w.lower()) for w in words if w not in "?"] #permet d'avoir la racine des mots et de comprendre le sens des mots ex :bnjr veux dire bonjour, gentillement ==> gentil ce qui va lui permettre de comprendre des mots dérivés (ex : "il est d'un gentilles" l'IA va comprendre "il est gentil")  
+words = sorted(list(set(words))) # création d'une liste de mot simplifier qui vont simplifier l'analyse des donnés
 
 labels = sorted(labels)
 
@@ -58,18 +58,21 @@ for x,doc in enumerate(docs_x):
 training = numpy.array(training)
 output= numpy.array(output)
 
-#création du résaux de neurone
+#création du résaux de neurone ici 4 neurones
 ops.reset_default_graph()
-net = tflearn.input_data(shape=[None, len(training[0])])
+net = tflearn.input_data(shape=[None, len(training[0])]) # couche d'entrer des neurones input
+# couche caché des neurones qui vont "réfléchir" pour déterminer les règles puis les utilisés 
 net = tflearn.fully_connected(net, 8)
 net = tflearn.fully_connected(net, 8)
 net = tflearn.fully_connected(net, 8)
 net = tflearn.fully_connected(net, 8)
-net = tflearn.fully_connected(net, len(output[0]), activation="softmax")
-net = tflearn.regression(net)
+net = tflearn.fully_connected(net, len(output[0]), activation="softmax") # sortie des nerones avec "l'activation" qui va permettre de changé des nombres incompréhensibles en probabilité
+#ici la fonction d'activation utilisé est softmax +info : https://fr.wikipedia.org/wiki/Fonction_softmax
+net = tflearn.regression(net) # prédiction de la sortie a partire de l'entrer
 
 model= tflearn.DNN(net)
 
+#entrainement de l'IA : n_epch=x le nombre de fois que l'on va entrainer le bot
 model.fit(training, output, n_epoch=5000, batch_size=8, show_metric=True)
 model.save("model.tflearn")
 
@@ -77,8 +80,8 @@ model.save("model.tflearn")
 def bag_of_words(s, words):
     bag = [0 for _ in range(len(words))]
 
-    s_words = nltk.word_tokenize(s)
-    s_words = [stemmer.stem(word.lower()) for word in s_words]
+    s_words = nltk.word_tokenize(s) # on découpe les mot d'entré
+    s_words = [stemmer.stem(word.lower()) for word in s_words] # on prend les mots clefs
 
     for se in s_words:
         for i, w in enumerate(words):
