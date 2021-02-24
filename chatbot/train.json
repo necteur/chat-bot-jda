@@ -19,8 +19,14 @@
     "reponses":["Humanité,Mathématique avec option math experte, physique chimie, SES, SVT, NSI (best matiere),LLCE (literature etragere),Géo politiqe sont enseigné au lycée jeanne d'arc en classe de 1er et de terminale"],
     "context_set":""},
 
+    
+    
+    
+    
+    
     {"tag":"annee_etrange",
     "patterns":["peut on faire une anne a l'etranger","peut on faire des echanges"],
-    "reponses":["Oui, une annee est proposee en Angleterre entre la 2nd et la 1er et un echange de quelque jour au Danemark"]}
+    "reponses":["Oui, une annee est proposee en Angleterre entre la 2nd et la 1er et un echange de quelque jour au Danemark"],
+    "context_set":""}
 ]
 }
