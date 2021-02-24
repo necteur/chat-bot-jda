@@ -29,5 +29,9 @@
     "reponses":["Oui, une annee est proposee en Angleterre entre la 2nd et la 1er et un echange de quelque jour au Danemark. Par contre le voyage en angleterre ne valide pas l'anner, c'est une annee suplementaire a l'etranger"],
     "context_set":""},
 
+    {"tag":"religion",
+    "patterns":["Les cours de religions sont ils obligatoire","les court de cathechisme sont ils obligatoire"],
+    "reponses":["Oui les cours de cathechisme sont obligatoire mais different parcour sont proposes aux eleves. Ces cours sont au rythme de 1 heure par semaine"],
+    "context_set":""}
 ]
 }
