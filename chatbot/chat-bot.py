@@ -22,13 +22,13 @@ for intent in data["intents"]:      #on parcourt tout le data (ici des dictionna
     for pattern in intent["patterns"]:      # on parcourt le dictionnaire pour voir les différentes "feature(input que l'IA va devoir faire face)" appellé ici pattern
         wrds = nltk.word_tokenize(pattern)      # séparation des mots dans une phrase pour permettre la modularité
         words.extend(wrds)      #ajout de la liste wrds à la liste words pour connaître les mots qui sont dans la "feature"
-        docs_x.append(wrds)     
+        docs_x.append(wrds)
         docs_y.append(intent["tag"])
 
         if intent["tag"] not in labels: # ajout de tous les types de données pour qu'ils soient par la suite traités et que aucun ne soit oublié
             labels.append(intent["tag"])
 
-words = [stemmer.stem(w.lower()) for w in words if w not in "?"] #permet d'avoir la racine des mots et de comprendre le sens des mots ex :bnjr veux dire bonjour, gentiment ==> gentil ce qui va lui permettre de comprendre des mots dérivés (ex : "il est d'un gentille" l'IA va comprendre "il est gentil")  
+words = [stemmer.stem(w.lower()) for w in words if w not in "?"] #permet d'avoir la racine des mots et de comprendre le sens des mots ex :bnjr veux dire bonjour, gentiment ==> gentil ce qui va lui permettre de comprendre des mots dérivés (ex : "il est d'un gentille" l'IA va comprendre "il est gentil")
 words = sorted(list(set(words))) # création d'une liste de mots simplifiés qui vont simplifier l'analyse des données
 
 labels = sorted(labels)
@@ -61,7 +61,7 @@ output= numpy.array(output)
 #création du réseau de neurones ici 4 neurones
 ops.reset_default_graph()
 net = tflearn.input_data(shape=[None, len(training[0])]) # couche d'entrer des neurones input
-# couche cachée des neurones qui vont "réfléchir" pour déterminer les règles puis les utiliser 
+# couche cachée des neurones qui vont "réfléchir" pour déterminer les règles puis les utiliser
 net = tflearn.fully_connected(net, 8)
 net = tflearn.fully_connected(net, 8)
 net = tflearn.fully_connected(net, 8)
@@ -73,7 +73,7 @@ net = tflearn.regression(net) # prédiction de la sortie à partir de l'entrée
 model= tflearn.DNN(net)
 
 #entrainement de l'IA : n_epch=x le nombre de fois que l'on va entrainer le bot
-model.fit(training, output, n_epoch=5000, batch_size=8, show_metric=True)
+model.fit(training, output, n_epoch=5500, batch_size=8, show_metric=True)
 model.save("model.tflearn")
 
 #prédiction

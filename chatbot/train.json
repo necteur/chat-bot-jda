@@ -5,36 +5,36 @@
     "context_set":""},
 
     {"tag":"aurevoir",
-    "patterns":["bonne journée","aurevoir","bye"],
+    "patterns":["bonne journée","aurevoir","bye","merci","merci de m'avoir aidé"],
     "reponses":["aurevoir et bonne journee","passe une bonne journee"],
     "context_set":""},
 
     {"tag":"langue",
-    "patterns":["quelle langue enseignez vous","quelle langue son disponible"],
+    "patterns":["je voudrais savoir quelle langue enseignez vous","je voudrais savoir quelle langue son disponible","je voudrais savoir quelles langues sont enseignée"],
     "reponses":["Nous enseignons : l'espagnol, l'anglais, l'allemand, le latin, nous avons une section anglophone et une section europe"],
     "context_set":""},
 
     {"tag":"specialite",
-    "patterns":["qu'elles sont les spécialites enseigne a Jeanne d'Arc"],
+    "patterns":["je voudrais savoir qu'elles sont les spécialites enseignées à Jeanne d'Arc","quelles spécialités sont enseignées"],
     "reponses":["Humanité,Mathématique avec option math experte, physique chimie, SES, SVT, NSI (best matiere),LLCE (literature etragere),Géo politiqe sont enseigné au lycée jeanne d'arc en classe de 1er et de terminale"],
     "context_set":""},
 
     {"tag":"menu",
-    "patterns":["y a t il des repas sans viande", "y a t il des repas pour les vegetariens"],
+    "patterns":["y a t il des repas sans viande", "y a t il des repas pour les végétariens"],
     "reponses":["Chaque jour un  menu alternatif pour les vegetariens est propose a la cantine"],
     "context_set":""},
     
     {"tag":"annee_etranger",
-    "patterns":["peut on faire une annee a l'etranger","peut on faire des echanges"],
+    "patterns":["peut on faire une année a l'etranger","peut on faire des échanges"],
     "reponses":["Oui, une annee est proposee en Angleterre entre la seconde et la premiere et un echange de quelques jours au Danemark. Par contre le voyage en Angleterre ne valide pas l'annee, c'est une annee supplementaire a l'etranger"],
     "context_set":""},
 
     {"tag":"religion",
-    "patterns":["Les cours de religion sont ils obligatoires","les cours de cathechisme sont ils obligatoires"],
+    "patterns":["Les cours de religion sont ils obligatoires","les cours de cathéchisme sont ils obligatoires"],
     "reponses":["Oui les cours de cathechisme sont obligatoires mais differents parcours sont proposes aux eleves. Ces cours sont au rythme de 1 heure toutes les deux semaines"],
     "context_set":""},
     {"tag":"entrer_sortie",
-    "patterns":["Quand les eleves peuvent ils sortire de l'etablisement","Est-ce que les eleves peuvent entrer et sortir du lycee sans controle"],
+    "patterns":["Quand les élèves peuvent ils sortire de l'établisement","Est-ce que les élèves peuvent entrer et sortir du lycée sans controle"],
     "reponses":["Les eleves de seconde ne sont pas authorises a sortire pendant les intercours, les heures d'etude et les recreation; les premiers et les terminales peuvent sortirent quand t ils le souhaites"],
     "context_set":""}
 ]

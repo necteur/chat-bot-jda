@@ -1,7 +1,7 @@
 import nltk
 from nltk.stem.lancaster import LancasterStemmer
 stemmer = LancasterStemmer()
-
+nltk.download('punkt')
 
 import numpy
 import tflearn
@@ -70,6 +70,8 @@ ops.reset_default_graph()
 net = tflearn.input_data(shape=[None, len(training[0])])
 net = tflearn.fully_connected(net, 8)
 net = tflearn.fully_connected(net, 8)
+net = tflearn.fully_connected(net, 8)
+net = tflearn.fully_connected(net, 8)
 net = tflearn.fully_connected(net, len(output[0]), activation="softmax")
 net = tflearn.regression(net)
 
@@ -77,8 +79,8 @@ model= tflearn.DNN(net)
 
 try:
     model.load("model.tflearn")
-except : 
-    model.fit(training, output, n_epoch=10000, batch_size=8, show_metric=True)
+except :
+    model.fit(training, output, n_epoch=5000, batch_size=8, show_metric=True)
     model.save("model.tflearn")
 
 
@@ -93,7 +95,7 @@ def bag_of_words(s, words):
         for i, w in enumerate(words):
             if w == se:
                 bag[i] = 1
-            
+
     return numpy.array(bag)
 
 
@@ -110,7 +112,7 @@ def chat():
 
         for tg in data["intents"]:
             if tg['tag'] == tag:
-                responses = tg['responses']
+                responses = tg['reponses']
 
         print(random.choice(responses))
 
