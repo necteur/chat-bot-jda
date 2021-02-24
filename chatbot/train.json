@@ -5,16 +5,18 @@
     "context_set":""},
 
     {"tag":"aurevoir",
-    "patterns":["bonne journée","aurevoir","bye"],
-    "reponses":["aurevoir et bonne journee","passe une bonne journee"],
+    "patterns":["bonne journée","au revoir","bye"],
+    "reponses":["au revoir et bonne journee","passe une bonne journee"],
     "context_set":""},
+
     {"tag":"langue",
-    "patterns":["quelle langue enseignez vous","quelle langue son disponible"],
+    "patterns":["quelles langues enseignez vous","quelles langues sont disponible"],
     "reponses":["Nous enseignons : l'espagnol, l'anglais, l'allemand, le latin, nous avons une section anglophone et une section europe"],
     "context_set":""},
+
     {"tag":"specialite",
-    "patterns":["qu'elles sont les spécialites enseigne a Jeanne d'Arc"],
-    "reponses":["Humanité,Mathématique avec option math experte, physique chimie, SES, SVT, NSI (best matiere),LLCE (literature etragere),Géo politiqe sont enseigné au lycée jeanne d'arc en classe de 1er et de terminale"],
+    "patterns":["quelles sont les spécialites enseignees a Jeanne d'Arc"],
+    "reponses":["Humanité, Mathématiques avec option maths expertes, physique-chimie, SES, SVT, NSI (la meilleure matiere), LLCE (literature etragere), ainsi que Géopolitique sont enseignees au lycee jeanne d'arc en classe de premiere et de terminale"],
     "context_set":""}
 
 ]
