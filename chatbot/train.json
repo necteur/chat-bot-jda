@@ -26,7 +26,8 @@
     
     {"tag":"annee_etrange",
     "patterns":["peut on faire une anne a l'etranger","peut on faire des echanges"],
-    "reponses":["Oui, une annee est proposee en Angleterre entre la 2nd et la 1er et un echange de quelque jour au Danemark"],
-    "context_set":""}
+    "reponses":["Oui, une annee est proposee en Angleterre entre la 2nd et la 1er et un echange de quelque jour au Danemark. Par contre le voyage en angleterre ne valide pas l'anner, c'est une annee suplementaire a l'etranger"],
+    "context_set":""},
+
 ]
 }
