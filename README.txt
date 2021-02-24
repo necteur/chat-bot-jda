@@ -15,4 +15,4 @@ le programme ne fonctionne pas avec les librairies intégrer de base dans python
 il est OBLIGATOIRE d'intaller :
   - tensorflow < pip install tensorflow >
   - tflearn < pip install tflearn >
-  - pour la version non fini, l'intallation de tensorflow-gpu (qui permet de réalisé les entrainements de l'IA avec le GPU) est fortement conseiller. Mais pour cela il est nessessaire de possèder un GPU de la marque NVidia et d'installer CUDA Toolkit (qui peut nesséssité la désinstalation en cas d'erreur de NVidia frameview SDK) lien de téléchargement : https://developer.nvidia.com/cuda-downloads?
+  - pour la version non fini, l'intallation de tensorflow-gpu <pip install tensorflow-gpu> (qui permet de réalisé les entrainements de l'IA avec le GPU) est fortement conseiller. Mais pour cela il est nessessaire de possèder un GPU de la marque NVidia et d'installer CUDA Toolkit (qui peut nesséssité la désinstalation en cas d'erreur de NVidia frameview SDK) lien de téléchargement : https://developer.nvidia.com/cuda-downloads?
