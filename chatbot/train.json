@@ -20,7 +20,7 @@
     "context_set":""},
 
     {"tag":"menu",
-    "patterns":["y a t il des repas sans viande", "y a t il des repas pour les végétariens"],
+    "patterns":["y a t il des repas sans viande", "y a t il des repas pour les végétariens","y a t il un menu végétarien","y a t il un menu sans viande"],
     "reponses":["Chaque jour un  menu alternatif pour les vegetariens est propose a la cantine"],
     "context_set":""},
     
