@@ -32,6 +32,10 @@
     {"tag":"religion",
     "patterns":["Les cours de religion sont ils obligatoires","les cours de cathechisme sont ils obligatoires"],
     "reponses":["Oui les cours de cathechisme sont obligatoires mais differents parcours sont proposes aux eleves. Ces cours sont au rythme de 1 heure toutes les deux semaines"],
+    "context_set":""},
+    {"tag":"entrer_sortie",
+    "patterns":["Quand les eleves peuvent ils sortire de l'etablisement","Est-ce que les eleves peuvent entrer et sortir du lycee sans controle"],
+    "reponses":["Les eleves de seconde ne sont pas authorises a sortire pendant les intercours, les heures d'etude et les recreation; les premiers et les terminales peuvent sortirent quand t ils le souhaites"],
     "context_set":""}
 ]
 }

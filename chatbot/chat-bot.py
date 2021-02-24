@@ -1,7 +1,7 @@
 import nltk
 from nltk.stem.lancaster import LancasterStemmer
 stemmer = LancasterStemmer()
-
+nltk.download('punkt')
 
 
 import numpy
