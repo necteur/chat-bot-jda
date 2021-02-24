@@ -25,16 +25,16 @@
     "context_set":""},
     
     {"tag":"annee_etranger",
-    "patterns":["peut on faire une année a l'etranger","peut on faire des échanges"],
+    "patterns":["peut on faire une année à l'etranger","peut on faire des échanges à l'étranger"],
     "reponses":["Oui, une annee est proposee en Angleterre entre la seconde et la premiere et un echange de quelques jours au Danemark. Par contre le voyage en Angleterre ne valide pas l'annee, c'est une annee supplementaire a l'etranger"],
     "context_set":""},
 
     {"tag":"religion",
-    "patterns":["Les cours de religion sont ils obligatoires","les cours de cathéchisme sont ils obligatoires"],
+    "patterns":["Les cours de religion sont ils obligatoires","les cours de cathéchisme sont ils obligatoires","le cathéchisme est il obligatoire ?"],
     "reponses":["Oui les cours de cathechisme sont obligatoires mais differents parcours sont proposes aux eleves. Ces cours sont au rythme de 1 heure toutes les deux semaines"],
     "context_set":""},
     {"tag":"entrer_sortie",
-    "patterns":["Quand les élèves peuvent ils sortire de l'établisement","Est-ce que les élèves peuvent entrer et sortir du lycée sans controle"],
+    "patterns":["Quand les élèves peuvent ils sortire de l'établisement","Est-ce que les élèves peuvent entrer et sortir du lycée sans controle","les élèves sont ils authorisés à sortire du batiment/lycée/établisment"],
     "reponses":["Les eleves de seconde ne sont pas authorises a sortire pendant les intercours, les heures d'etude et les recreation; les premiers et les terminales peuvent sortirent quand t ils le souhaites"],
     "context_set":""}
 ]
