@@ -10,7 +10,7 @@ import tensorflow
 import random
 import json
 from tensorflow.python.framework import ops
-with open("train.json") as file: #ouverture du fichier de donné (dictionnaire python)
+with open("train.json") as file: #ouverture du fichier de données (dictionnaire python)
     data = json.load(file)
 
 words = []
@@ -18,18 +18,18 @@ labels = []
 docs_x = []
 docs_y = []
 
-for intent in data["intents"]:      #on parcour tout le data (ici des dictionnaires de donné) qui est comprie dans le dictionnaire intents
-    for pattern in intent["patterns"]:      # on parcour le dictionnaire pour voir les différentes "feature(input que l'IA va devoir faire face)" appeller ici pattern
-        wrds = nltk.word_tokenize(pattern)      # séparation des mot dans une phrases pour permettre la modularité
-        words.extend(wrds)      #ajout de la liste wrds à la liste words pour connaitre les mots qui sont dans la "feature"
+for intent in data["intents"]:      #on parcourt tout le data (ici des dictionnaires de données) qui est compris dans le dictionnaire intents
+    for pattern in intent["patterns"]:      # on parcourt le dictionnaire pour voir les différentes "feature(input que l'IA va devoir faire face)" appellé ici pattern
+        wrds = nltk.word_tokenize(pattern)      # séparation des mots dans une phrase pour permettre la modularité
+        words.extend(wrds)      #ajout de la liste wrds à la liste words pour connaître les mots qui sont dans la "feature"
         docs_x.append(wrds)     
         docs_y.append(intent["tag"])
 
-        if intent["tag"] not in labels: # ajout de tout les types de donné pour qu'il soit par la suite traité et que aucun ne soit oublier
+        if intent["tag"] not in labels: # ajout de tous les types de données pour qu'ils soient par la suite traités et que aucun ne soit oublié
             labels.append(intent["tag"])
 
-words = [stemmer.stem(w.lower()) for w in words if w not in "?"] #permet d'avoir la racine des mots et de comprendre le sens des mots ex :bnjr veux dire bonjour, gentillement ==> gentil ce qui va lui permettre de comprendre des mots dérivés (ex : "il est d'un gentilles" l'IA va comprendre "il est gentil")  
-words = sorted(list(set(words))) # création d'une liste de mot simplifier qui vont simplifier l'analyse des donnés
+words = [stemmer.stem(w.lower()) for w in words if w not in "?"] #permet d'avoir la racine des mots et de comprendre le sens des mots ex :bnjr veux dire bonjour, gentiment ==> gentil ce qui va lui permettre de comprendre des mots dérivés (ex : "il est d'un gentille" l'IA va comprendre "il est gentil")  
+words = sorted(list(set(words))) # création d'une liste de mots simplifiés qui vont simplifier l'analyse des données
 
 labels = sorted(labels)
 
@@ -58,17 +58,17 @@ for x,doc in enumerate(docs_x):
 training = numpy.array(training)
 output= numpy.array(output)
 
-#création du résaux de neurone ici 4 neurones
+#création du réseau de neurones ici 4 neurones
 ops.reset_default_graph()
 net = tflearn.input_data(shape=[None, len(training[0])]) # couche d'entrer des neurones input
-# couche caché des neurones qui vont "réfléchir" pour déterminer les règles puis les utilisés 
+# couche cachée des neurones qui vont "réfléchir" pour déterminer les règles puis les utiliser 
 net = tflearn.fully_connected(net, 8)
 net = tflearn.fully_connected(net, 8)
 net = tflearn.fully_connected(net, 8)
 net = tflearn.fully_connected(net, 8)
 net = tflearn.fully_connected(net, len(output[0]), activation="softmax") # sortie des nerones avec "l'activation" qui va permettre de changé des nombres incompréhensibles en probabilité
-#ici la fonction d'activation utilisé est softmax +info : https://fr.wikipedia.org/wiki/Fonction_softmax
-net = tflearn.regression(net) # prédiction de la sortie a partire de l'entrer
+#ici la fonction d'activation utilisée est softmax +info : https://fr.wikipedia.org/wiki/Fonction_softmax
+net = tflearn.regression(net) # prédiction de la sortie à partir de l'entrée
 
 model= tflearn.DNN(net)
 
@@ -80,7 +80,7 @@ model.save("model.tflearn")
 def bag_of_words(s, words):
     bag = [0 for _ in range(len(words))]
 
-    s_words = nltk.word_tokenize(s) # on découpe les mot d'entré
+    s_words = nltk.word_tokenize(s) # on découpe les mot d'entrée
     s_words = [stemmer.stem(word.lower()) for word in s_words] # on prend les mots clefs
 
     for se in s_words:
