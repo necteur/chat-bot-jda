@@ -12,7 +12,10 @@
     "patterns":["quelle langue enseignez vous","quelle langue son disponible"],
     "reponses":["Nous enseignons : l'espagnol, l'anglais, l'allemand, le latin, nous avons une section anglophone et une section europe"],
     "context_set":""},
-    {"tag":""}
+    {"tag":"specialite",
+    "patterns":["qu'elles sont les spécialites enseigne a Jeanne d'Arc"],
+    "reponses":["Humanité,Mathématique avec option math experte, physique chimie, SES, SVT, NSI (best matiere),LLCE (literature etragere),Géo politiqe sont enseigné au lycée jeanne d'arc en classe de 1er et de terminale"],
+    "context_set":""}
 
 ]
 }
