@@ -10,7 +10,7 @@ import tensorflow
 import random
 import json
 from tensorflow.python.framework import ops
-with open("train.json") as file: #ouverture du fichier de données (dictionnaire python)
+with open("train.json", encoding="utf-8") as file: #ouverture du fichier de données (dictionnaire python)
     data = json.load(file)
 
 words = []
@@ -62,10 +62,10 @@ output= numpy.array(output)
 ops.reset_default_graph()
 net = tflearn.input_data(shape=[None, len(training[0])]) # couche d'entrer des neurones input
 # couche cachée des neurones qui vont "réfléchir" pour déterminer les règles puis les utiliser (4 couche qui continnent 16 neurones)
-net = tflearn.fully_connected(net, 16)
-net = tflearn.fully_connected(net, 16)
-net = tflearn.fully_connected(net, 16)
-net = tflearn.fully_connected(net, 16)
+net = tflearn.fully_connected(net, 32)
+net = tflearn.fully_connected(net, 32)
+net = tflearn.fully_connected(net, 32)
+net = tflearn.fully_connected(net, 32)
 net = tflearn.fully_connected(net, len(output[0]), activation="softmax") # sortie des nerones avec "l'activation" qui va permettre de changé des nombres incompréhensibles en probabilité
 #ici la fonction d'activation utilisée est softmax +info : https://fr.wikipedia.org/wiki/Fonction_softmax
 net = tflearn.regression(net) # prédiction de la sortie à partir de l'entrée
@@ -73,7 +73,7 @@ net = tflearn.regression(net) # prédiction de la sortie à partir de l'entrée
 model= tflearn.DNN(net)
 
 #entrainement de l'IA : n_epch=x le nombre de fois que l'on va entrainer le bot
-model.fit(training, output, n_epoch=2000, batch_size=16, show_metric=True)
+model.fit(training, output, n_epoch=3000, batch_size=32, show_metric=True)
 model.save("model.tflearn")
 
 #prédiction
@@ -105,7 +105,7 @@ def chat():
         for tg in data["intents"]:
             if tg['tag'] == tag:
                 responses = tg['reponses']
-        print()
         print(random.choice(responses))
+        print()
 
 chat()

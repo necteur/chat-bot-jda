@@ -4,31 +4,36 @@ html,body{
     margin: 0px;
     padding: 0px;
     font-family: Lato;
+    background: #262622;
 }
 section{
     position: relative;
     width: 100%;
     height: 1212px;
-    background:url("../image/fond.jpg");
+    background:url("../image/fondcode.png");
     background-size: 100%;
     background-attachment: fixed;
-    background-repeat: no-repeat;
+    background-repeat: repeat;
     
 }
 .titre{
     position: sticky;
-    color: black;
+    color: white;
     font-family: Roboto;
     font-weight: 900;
     letter-spacing: 2px;
     padding-top: 25%;
     margin-top:0px ;
-    font-size: 32px;
+    font-size: 40px;
     text-align: center;
+    text-transform: uppercase;
+    text-decoration: underline;
 }
 .btn {
     margin: 10px;
     padding: 20px;
+    padding-left: 50px;
+    padding-right: 50px;
     text-align: center;
     cursor: pointer;
     text-transform: uppercase;
@@ -48,4 +53,30 @@ section{
 }
 .btn1:hover{
     background-position: right;
+}
+.dégradé{
+    background: linear-gradient(rgb(32, 32, 32),#262622);
+    width: 100%;
+    height: 75px;
+}
+.text{
+    margin-top: 5%;
+    margin-left: 10%;
+    margin-bottom: 10%;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-left: 10px;
+    padding-right: 10px;
+    background: white;
+    width: 20%;
+    border-radius: 10px;
+}
+.article1{
+    text-transform: uppercase;
+    font-weight: 400;
+    text-align: center;
+}
+.sous-titre{
+    text-decoration: underline;
+    text-align: center;
 }
