@@ -16,7 +16,7 @@
 
     {"tag":"specialite",
     "patterns":["je voudrais savoir quelles sont les spécialites enseignées à Jeanne d'Arc","quelles spécialités sont enseignées"],
-    "reponses":["Humanités, mathématiques avec option maths expertes ou complementaires, physique chimie, SES, SVT, NSI (meilleure matiere), LLCE (literature etrangere) et géopolitique sont enseignes au lycee jeanne d'arc en classe de premiere et de terminale"],
+    "reponses":["Humanites, mathematiques avec option maths expertes ou complementaires, physique chimie, SES, SVT, NSI (meilleure matiere ;)), LLCE (literature etrangere) et géopolitique sont enseignes au lycee jeanne d'arc en classe de premiere et de terminale"],
     "context_set":""},
 
     {"tag":"menu",
