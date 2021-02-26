@@ -4,7 +4,7 @@ Inscription au lycée
 
 ✔Doit on être reçu en rendez-vous ?
 
-Quel numéro pour s'inscrire ?
+✔Quel numéro pour s'inscrire ?
 
 Faut il un niveau minimum pour être admis à Jeanne d'Arc ?
 
@@ -22,8 +22,8 @@ Faut il un niveau minimum pour être admis à Jeanne d'Arc ?
 
 ✔Est-ce que les élèves peuvent entrer et sortir du lycée sans contrôle ?
 
-Est-ce que la messe est célébrée au sein de l'école ?
+✔Est-ce que la messe est célébrée au sein de l'école ?
 
-Proposez-vous des études surveillées ?
+✔Proposez-vous des études surveillées ?
 
-Proposez-vous du soutien scolaires ?
+Proposez-vous du soutien scolaire ?

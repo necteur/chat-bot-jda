@@ -53,10 +53,15 @@
     "patterns":["Je voudrais savoir quel numero il faut appeler","Quel est le numero à appeler pour s'inscrire","Quel numéro faut-il appeler pour inscrire mon enfant"],
     "reponses":["Le numéro a appeler pour les inscriptions au lycee est le suivant : 04 50 28 36 14"],
     "context_set":""},
-    
+
     {"tag":"etudes",
     "patterns":["Je voudrais savoir si des etudes surveillées sont proposées","Le lycée propose-t-il des études surveillées"],
     "reponses":["Oui, des heures d'etude surveillee peuvent etre fixees pendant les heures de pause de l'eleve"],
+    "context_set":""},
+
+    {"tag":"messe au lycee",
+    "patterns":["Je voudrais savoir si des messes sont organisees au lycee","le lycee propose-t-il des messes","y'a-t-il des moments de priere ou de messe au lycee"],
+    "reponses":["Oui, des messes sont organisees au lycee notamment pour les fetes chretiennes, elles sont neanmoins facultatives"],
     "context_set":""}
 ]
 }
