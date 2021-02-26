@@ -62,6 +62,11 @@
     {"tag":"messe au lycee",
     "patterns":["Je voudrais savoir si des messes sont organisees au lycee","le lycee propose-t-il des messes","y'a-t-il des moments de priere ou de messe au lycee"],
     "reponses":["Oui, des messes sont organisees au lycee notamment pour les fetes chretiennes, elles sont neanmoins facultatives"],
+    "context_set":""},
+
+    {"tag":"soutien",
+    "patterns":["Je voudrais savoir si vous proposez du soutien scolaire","proposez vous du soutien scolaire","est-il possible de prendre des cours particuliers"],
+    "reponses":["Il est possible d'avoir du soutien scolaire mais cela reste a l'initiative des professeurs"],
     "context_set":""}
 ]
 }

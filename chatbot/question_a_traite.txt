@@ -26,4 +26,4 @@ Faut il un niveau minimum pour être admis à Jeanne d'Arc ?
 
 ✔Proposez-vous des études surveillées ?
 
-Proposez-vous du soutien scolaire ?
+✔Proposez-vous du soutien scolaire ?
