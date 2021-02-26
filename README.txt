@@ -11,7 +11,7 @@ instalation de tensorflow : https://colab.research.google.com/drive/1F_EWVKa8rbM
 documentation sur les résaux de neurones : https://colab.research.google.com/drive/1m2cg3D1x3j5vrFc-Cu0gMvc48gWyCOuG#forceEdit=true&sandboxMode=true
 
 /!\ ATTENTION /!\
-Ne pas utiliser python 3.9, version prise en charge : 3.8(instable), 3.7, 3.6, 3.5, 3.4, 3.3, 3.2, 3.1, 3.0 (python 2.x, 1.x non pris en charge)
+Ne pas utiliser python 3.9, versions prises en charge : 3.8(instable), 3.7, 3.6, 3.5, 3.4, 3.3, 3.2, 3.1, 3.0 (python 2.x, 1.x non pris en charge)
 le programme ne fonctionne pas avec les librairies intégrées de base dans python
 il est OBLIGATOIRE d'intaller :
   - tensorflow < pip install tensorflow > https://www.tensorflow.org/install?hl=fr
