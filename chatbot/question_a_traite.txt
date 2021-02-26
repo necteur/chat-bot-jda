@@ -1,10 +1,10 @@
 Inscription au lycée
 
-Quels documents sont demandés pour l'inscription ? Réponse : les résultats scolaires
+✔Quels documents sont demandés pour l'inscription ? Réponse : les résultats scolaires
 
-Doit on être reçu en rendez-vous ?
+✔Doit on être reçu en rendez-vous ?
 
-Quand démarrent / débutent les inscriptions ?
+Quel numéro pour s'inscrire ?
 
 Faut il un niveau minimum pour être admis à Jeanne d'Arc ?
 
@@ -20,7 +20,7 @@ Faut il un niveau minimum pour être admis à Jeanne d'Arc ?
 
 ✔L'enseignement religieux est il obligatoire ?
 
-Est-ce que les élèves peuvent entrer et sortir du lycée sans contrôle ?
+✔Est-ce que les élèves peuvent entrer et sortir du lycée sans contrôle ?
 
 Est-ce que la messe est célébrée au sein de l'école ?
 

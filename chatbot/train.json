@@ -6,17 +6,17 @@
 
     {"tag":"aurevoir",
     "patterns":["bonne journée","aurevoir","bye","merci","merci de m'avoir aidé","cordialement"],
-    "reponses":["aurevoir et bonne journee"],
+    "reponses":["au revoir et bonne journee"],
     "context_set":""},
 
     {"tag":"langue",
-    "patterns":["je voudrais savoir quelle langue enseignez vous","je voudrais savoir quelle langue son disponible","je voudrais savoir quelles langues sont enseignée"],
+    "patterns":["je voudrais savoir quelle langue vous enseignez","je voudrais savoir quelles langues sont disponibles","je voudrais savoir quelles langues sont enseignées"],
     "reponses":["Nous enseignons : l'espagnol, l'anglais, l'allemand, le latin, nous avons une section anglophone et une section europe"],
     "context_set":""},
 
     {"tag":"specialite",
-    "patterns":["je voudrais savoir qu'elles sont les spécialites enseignées à Jeanne d'Arc","quelles spécialités sont enseignées"],
-    "reponses":["Humanité,Mathématique avec option math experte, physique chimie, SES, SVT, NSI (best matiere),LLCE (literature etragere),Géo politiqe sont enseigné au lycée jeanne d'arc en classe de 1er et de terminale"],
+    "patterns":["je voudrais savoir quelles sont les spécialites enseignées à Jeanne d'Arc","quelles spécialités sont enseignées"],
+    "reponses":["Humanités, mathématiques avec option maths expertes ou complementaires, physique chimie, SES, SVT, NSI (meilleure matiere), LLCE (literature etrangere) et géopolitique sont enseignes au lycee jeanne d'arc en classe de premiere et de terminale"],
     "context_set":""},
 
     {"tag":"menu",
@@ -26,16 +26,32 @@
     
     {"tag":"annee_etranger",
     "patterns":["peut on faire une année à l'etranger","peut on faire des échanges à l'étranger"],
-    "reponses":["Oui, une annee est proposee en Angleterre entre la seconde et la premiere et un echange de quelques jours au Danemark. Par contre le voyage en Angleterre ne valide pas l'annee, c'est une annee supplementaire a l'etranger"],
+    "reponses":["Oui, une annee est proposee en Angleterre entre la seconde et la premiere et un echange de quelques jours au Danemark. En revanche le voyage en Angleterre ne valide pas l'annee, c'est une annee supplementaire a l'etranger"],
     "context_set":""},
 
     {"tag":"religion",
-    "patterns":["Les cours de religion sont ils obligatoires","les cours de cathéchisme sont ils obligatoires","le cathéchisme est il obligatoire ?"],
+    "patterns":["Les cours de religion sont ils obligatoires","les cours de cathéchisme sont ils obligatoires","le cathéchisme est il obligatoire"],
     "reponses":["Oui les cours de cathechisme sont obligatoires mais differents parcours sont proposes aux eleves. Ces cours sont au rythme de 1 heure toutes les deux semaines"],
     "context_set":""},
+
     {"tag":"entrer_sortie",
     "patterns":["Quand les élèves peuvent ils sortire de l'établisement","Est-ce que les élèves peuvent entrer et sortir du lycée sans controle","les élèves sont ils authorisés à sortire du batiment/lycée/établisment"],
-    "reponses":["Les eleves de seconde ne sont pas authorises a sortire pendant les intercours, les heures d'etude et les recreation; les premiers et les terminales peuvent sortirent quand t ils le souhaites"],
+    "reponses":["Les eleves de seconde ne sont pas autorises a sortir pendant les intercours, les heures d'etude et les recreations ; les premieres et les terminales peuvent sortir quand ils le souhaitent"],
+    "context_set":""},
+
+    {"tag":"inscription",
+    "patterns":["Quels documents sont attendus pour l'inscription","Je voudrais savoir les documents nécessaires a l'incription","Comment inscire mon enfant au lycee"],
+    "reponses":["Les documents necessaires a l'inscription au lycee sont les bulletins contenant les resultats scolaires du college"],
+    "context_set":""},
+
+    {"tag":"rendez vous",
+    "patterns":["Je voudrais savoir s'il faut prendre rendez-vous pour l'inscription","faut il prendre rendez-vous pour inscrire mon enfant au lycee"],
+    "reponses":["Oui, un rendez vous est necessaire avec le directeur our le co directeur pour s'incrire au lycee"],
+    "context_set":""},
+
+    {"tag":"numero",
+    "patterns":["Je voudrais savoir quel numero il faut appeler","Quel est le numero à appeler pour s'inscrire","Quel numéro faut-il appeler pour inscrire mon enfant"],
+    "reponses":["Le numéro a appeler pour les inscriptions au lycee est le suivant : 04 50 28 36 14"],
     "context_set":""}
 ]
 }
