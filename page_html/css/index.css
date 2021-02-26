@@ -4,7 +4,11 @@ html,body{
     margin: 0;
     padding: 0;
     font-family: Lato;
+    background: url(../image/disgn.png);
+    background-repeat: no-repeat;
+    background-size: 100%;
 }
+
 .menu{
     background: white;
     width: 100%;
@@ -45,4 +49,40 @@ html,body{
 .m-lien:hover{
     padding-bottom: 3px;
     border-color: #425066;
+}
+.article{
+    margin-top: 13%;
+}
+.titre{
+    text-transform: uppercase;
+    color: black;
+    text-align: center;
+}
+.st_crea{
+    text-transform: uppercase;
+    text-align: center;
+
+}
+.seperation{
+    border-top: 1px solid #dadada;
+    margin-top: 80px;
+    margin-bottom: 80px;
+    margin-left: 30%;
+    margin-right: 30%;
+}
+.nom{
+    text-align: center;
+}
+.prierban{
+    text-align: center;
+    text-transform: uppercase;
+}
+.projet{
+    max-width: 100px;
+    height: auto;
+}
+.img_projet{
+    max-width: 50%;
+    height: auto;
+    object-fit: contain;
 }
