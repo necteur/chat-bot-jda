@@ -67,6 +67,10 @@
     {"tag":"soutien",
     "patterns":["Je voudrais savoir si vous proposez du soutien scolaire","proposez vous du soutien scolaire","est-il possible de prendre des cours particuliers"],
     "reponses":["Il est possible d'avoir du soutien scolaire mais cela reste a l'initiative des professeurs"],
+    "context_set":""},
+    {"tag":"as",
+    "patterns":["Je voudrais savoir si il y des as","j'aimerais savoir si vous proposez des as sur la pose méridienne"],
+    "reponse":["Oui, nous proposons des as (temporairement suspendue du a la cirse du covid 19)"],
     "context_set":""}
 ]
 }
