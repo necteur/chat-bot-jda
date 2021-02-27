@@ -1,0 +1,52 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;500;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700;900&display=swap');
+html,body{
+    margin: 0;
+    padding: 0;
+    font-family: Lato;
+    background: url(../image/disgn.png);
+    background-repeat: no-repeat;
+    background-size: 100%;
+}
+
+.menu{
+    background: white;
+    width: 100%;
+    height: 66px;
+    line-height: 66px;
+    border-bottom: black solid;
+    color :#425066;
+}
+.m-left {
+    float: left;
+    margin-left: 20px;
+    color :#425066;
+}
+.logo {
+    margin: 0;
+    padding: 0;
+    color :#425066;
+    text-transform: uppercase;
+    font-family: 'Roboto';
+    font-weight: 900;
+    font-size: 40px;
+    letter-spacing: 2px;
+}
+.m-right {
+    margin-right: 20px;
+    float: right;
+}
+.m-lien{
+    color :#425066;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: 700;
+    padding: 0;
+    margin: 0 20px;
+    transition: all 0.5s ease-in-out;
+    border-bottom: 2px solid transparent;
+}
+.m-lien:hover{
+    padding-bottom: 3px;
+    border-color: #425066;
+}
