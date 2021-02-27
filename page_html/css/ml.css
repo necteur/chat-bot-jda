@@ -50,3 +50,15 @@ html,body{
     padding-bottom: 3px;
     border-color: #425066;
 }
+.text{
+    margin: 20% 5% 25% 25%;
+    max-width: 900px;
+}
+.text h1{
+    text-transform: uppercase;
+    text-decoration: underline;
+    text-align: center;
+}
+.sous_titre{
+    text-decoration: underline;
+}
