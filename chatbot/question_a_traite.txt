@@ -6,8 +6,6 @@ Inscription au lycée
 
 ✔Quel numéro pour s'inscrire ?
 
-Faut il un niveau minimum pour être admis à Jeanne d'Arc ?
-
 ✔Quelles sont les langues enseignées ?
 
 ✔Quelles sont les spécialités enseignées ?
@@ -27,3 +25,7 @@ Faut il un niveau minimum pour être admis à Jeanne d'Arc ?
 ✔Proposez-vous des études surveillées ?
 
 ✔Proposez-vous du soutien scolaire ?
+
+✔Y'a t-il des AS
+
+✔Quel est le taux de réussite ?
