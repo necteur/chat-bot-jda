@@ -77,6 +77,10 @@
     {"tag":"reussite",
     "patterns":["Je voudrais connaître le taux de réussite au lycée","Quel est le taux de réssite au lycée"],
     "reponses":["En 2020, 100% de eleves en filiere ES ont passe leur baccalaureat, 91% pour les L, et 100% pour les S"],
+    "context_set":""},
+    {"tag":"tarifs",
+    "patterns":["Je voudrais connaître les tarifs d'inscription","Quels sont les prix à payer pour inscrire mon enfant","Quels sont les tarifs"],
+    "reponses":["Les tarifs sont calculés en fonction de vos revenus, consultez ce lien pour en savoir plus : https://www.jda-gex.org/infos-pratiques/tarifs/"],
     "context_set":""}
 ]
 }

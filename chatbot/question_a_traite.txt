@@ -29,3 +29,5 @@ Inscription au lycée
 ✔Y'a t-il des AS
 
 ✔Quel est le taux de réussite ?
+
+✔Quels sont les tarifs ?
