@@ -73,7 +73,7 @@ net = tflearn.regression(net) # prédiction de la sortie à partir de l'entrée
 model= tflearn.DNN(net)
 
 #entrainement de l'IA : n_epch=x le nombre de fois que l'on va entrainer le bot
-model.fit(training, output, n_epoch=100, batch_size=32, show_metric=True)
+model.fit(training, output, n_epoch=10, batch_size=32, show_metric=True)
 model.save("model.tflearn")
 
 #prédiction
@@ -90,37 +90,39 @@ def bag_of_words(s, words):
 
     return numpy.array(bag)
 
-
-def chat():
-
-
-        #tkinter
-        fen = Tk()
-        fen.title('JDA chatbot')
-        fen.geometry("960x540")
-        intro = Label(fen, text='Vous pouvez commencer à parler (taper quit pour arrêter)!')
-        intro.grid(column=0,padx=20,pady=10)
-        form = Entry(fen)
-        form.grid(column=0,padx=20,pady=10)
-        btn_valide = Button(fen, text='valider', command=post)
-        btn_valide.grid(column=0,padx=20,pady=10)
-        fen.mainloop()
-        return form
-
 def post() :
         #print("Vous pouvez commencer à parler (taper quit pour arrêter)!")
-        while True:
-            inp = form.get()
-            if inp.lower() == "quit":
-                break
 
-            results = model.predict([bag_of_words(inp, words)])
-            results_index = numpy.argmax(results)
-            tag = labels[results_index]
+        inp = form.get()
+        if inp.lower() == "quit":
+            fen.destroy()
 
-            for tg in data["intents"]:
-                if tg['tag'] == tag:
-                    responses = tg['reponses']
-            aff_post = (random.choice(responses))
-            aff_post_tk=Label(fen,text=aff_post)
-form=chat()
+        results = model.predict([bag_of_words(inp, words)])
+        results_index = numpy.argmax(results)
+        tag = labels[results_index]
+
+        for tg in data["intents"]:
+            if tg['tag'] == tag:
+                responses = tg['reponses']
+        aff_post = (random.choice(responses))
+        print(aff_post)
+        aff_post_tk=Label(fen,text=aff_post)
+        aff_post_tk.grid(column=5,padx=20,pady=20)
+#def chat():
+
+
+#tkinter
+fen = Tk()
+fen.title('JDA chatbot')
+fen.geometry("960x540")
+intro = Label(fen, text='Vous pouvez commencer à parler (taper quit pour arrêter)!')
+intro.grid(column=0,padx=20,pady=10)
+
+form = Entry(fen)
+form.grid(column=0,padx=20,pady=10)
+btn_valide = Button(fen, text='valider', command=post)
+btn_valide.grid(column=0,padx=20,pady=10)
+fen.mainloop()
+
+
+
