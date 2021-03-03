@@ -100,21 +100,21 @@ def post(a) :
         messages.insert(INSERT, '\n')
         if inp.lower() == "quit":
             fen.destroy()
-        if inp.lower() == 'libellule' or 'ma libellule' or 'libelule' or 'ma libelule' :
-            vidPath = 'MA LIBELLULE.mp4'
-            window= pyglet.window.Window()
-            player = pyglet.media.Player()
-            source = pyglet.media.StreamingSource()
-            MediaLoad = pyglet.media.load(vidPath)
-
-            player.queue(MediaLoad)
-            player.play()
-
-
-            @window.event
-            def on_draw():
-                if player.source and player.source.video_format:
-                    player.get_texture().blit(50,50)
+#        if inp.lower() == 'libellule' or 'ma libellule' or 'libelule' or 'ma libelule' :
+#            vidPath = 'MA LIBELLULE.mp4'
+#            window= pyglet.window.Window()
+#            player = pyglet.media.Player()
+#            source = pyglet.media.StreamingSource()
+#            MediaLoad = pyglet.media.load(vidPath)
+#
+#            player.queue(MediaLoad)
+#            player.play()
+#
+#
+#            @window.event
+#            def on_draw():
+#                if player.source and player.source.video_format:
+#                    player.get_texture().blit(50,50)
 
 
 
