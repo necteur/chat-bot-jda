@@ -40,9 +40,9 @@ quelle sont les sport pratiquer dans le cadre de l'AS
 
 ✔faut il un cadena pour le casier ?
 
-les manueles sont il fournie par le lycée
+✔les manueles sont il fournie par le lycée
 
-quelle est le pirx du manuelle scolaire 
+✔quelle est le pirx du manuelle scolaire 
 
 la carte pass région génère t elle des avantages au lycées Jeanne d'Arc
 
@@ -50,19 +50,17 @@ comment ce procurer la carte passe région
 
 y a t il un cdi
 
-y a t il des ordres de passage à la cantine
-
-y a t il cantine
+✔y a t il des ordres de passage à la cantine
 
 quelle est le prix des repas occasionels à la cantine
 
-les élèves qui suivent un régime particulier peuvent il manger à la cantine
+✔les élèves qui suivent un régime particulier peuvent il manger à la cantine
 
-un élève peut il amener son propre repas a la cantine
+✔un élève peut il amener son propre repas a la cantine
 
-y a t il des transports scolaires
+✔y a t il des transports scolaires
 
-comment ce procuré la carte de transport scolaire
+✔comment ce procuré la carte de transport scolaire
 
 photocopie et impression ==> a intégrer avec le cdi
 
@@ -74,13 +72,13 @@ faut il une assurance responsabilité civile/ individuel accident
 
 les bourses sont  elles accessible pour le lycée Jeanne d'Arc
 
-horaire des cours
+✔horaire des cours
 
-combien y a t il d'élève par classe
+✔combien y a t il d'élève par classe
 
-combien de classe y a t il de classe
+✔combien de classe y a t il de classe
 
-combien d'élèves
+✔combien d'élèves
 
 réglement interieur (réponse = https://www.jda-gex.org/app/uploads/2020/12/lycee-reglement-interieur-2020-2021.pdf)
 
