@@ -112,6 +112,16 @@
     {"tag":"eleves",
     "patterns":["Je voudrais connaître le nombre d'élèves par classe", "Combien y'a-t-il d'élèves par classe"],
     "reponses":["Il y a environ 30 eleves par classe, legerement plus pour les secondes, et legerement moins pour le premieres et terminales. L'instition entiere compte 73 classes et 1938 eleves."],
+    "context_set":""},
+
+    {"tag":"test_langue",
+    "patterns":["Je voudrais savoir s'il est possible d'être évalué sur une langue","Y a t-il des examens en langues étrangères"],
+    "reponses":["Il est possible de passer un test de Cambridge en anglais en terminale"],
+    "context_set":""},
+
+    {"tag":"cdi",
+    "patterns":["Que peut-on faire au cdi","Je voudrais savoir ce que le cdi propose","qu'est-t-il possible de faire au cdi"],
+    "reponses":["Il est evidemment possible d'imprimer des travaux ou autres au CDI. Il est egalement possible d'utiliser les ordinateurs ou d'emprunter des livres pour une duree discutee au moment de l'emprunt"],
     "context_set":""}
 ]
 }
