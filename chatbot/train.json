@@ -96,7 +96,7 @@
 
     {"tag":"cantine",
     "patterns":["Je voudrais savoir comment fonctionne le passage à la cantine","Comment le passage à la cantine fonctionne-t-il"],
-    "reponses":["Un ordre de passage par niveau de classe est applique à la cantine. Avec la crise COVID-19, cet ordre de passage a été modifié, laissant désormais place a un passage par classe et non par niveau. Informations supplementaires : il existe des alternatives vegetariennes pour les eleves vegetariens. Les eleves peuvent emmener leur propre repas s'ils ont un certificat medical"],
+    "reponses":["Un ordre de passage par niveau de classe est applique à la cantine. Avec la crise COVID-19, cet ordre de passage a été modifié, laissant désormais place a un passage par classe et non par niveau. Informations supplementaires : il existe des alternatives vegetariennes pour les eleves vegetariens. Les eleves peuvent emmener leur propre repas s'ils ont un certificat medical. Le prix des repas occasionnels est de 8 euros et 50 centimes"],
     "context_set":""},
 
     {"tag":"transports",
