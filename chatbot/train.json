@@ -107,6 +107,11 @@
     {"tag":"horaires",
     "patterns":["Je voudrais connaître les horaires de cours","Quels sont les horaires de cours"],
     "reponses":["Voici les horaires de cours. Matin : 8h30 : 1er cours / 9h25 : 2eme cours / 10h35 : 3eme cours / 11h30 : 4eme cours ou repas // Après-midi : 13h30 : 1er cours / 14h25 : 2eme cours / 15h35 : 3eme cours / 16h30 : dernier cours"],
+    "context_set":""},
+
+    {"tag":"eleves",
+    "patterns":["Je voudrais connaître le nombre d'élèves par classe", "Combien y'a-t-il d'élèves par classe"],
+    "reponses":["Il y a environ 30 eleves par classe, legerement plus pour les secondes, et legerement moins pour le premieres et terminales. L'instition entiere compte 73 classes et 1938 eleves."],
     "context_set":""}
 ]
 }
