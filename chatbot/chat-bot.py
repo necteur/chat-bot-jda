@@ -75,7 +75,7 @@ net = tflearn.regression(net) # prédiction de la sortie à partir de l'entrée
 model= tflearn.DNN(net)
 
 #entrainement de l'IA : n_epch=x le nombre de fois que l'on va entrainer le bot
-model.fit(training, output, n_epoch=10, batch_size=32, show_metric=True)
+model.fit(training, output, n_epoch=1000, batch_size=32, show_metric=True)
 model.save("model.tflearn")
 
 #prédiction
@@ -100,25 +100,35 @@ def post(a) :
         messages.insert(INSERT, '\n')
         if inp.lower() == "quit":
             fen.destroy()
-        if inp.lower() == 'libellule' or 'ma libellule' or 'libelule' or 'ma libelule' :
-            vidPath = 'MA LIBELLULE.mp4'
-            window= pyglet.window.Window()
-            player = pyglet.media.Player()
-            source = pyglet.media.StreamingSource()
-            MediaLoad = pyglet.media.load(vidPath)
+#        if inp.lower() == 'libellule' or 'ma libellule' or 'libelule' or 'ma libelule' :
+#            vidPath = 'MA LIBELLULE.mp4'
+#            window= pyglet.window.Window()
+#            player = pyglet.media.Player()
+#            source = pyglet.media.StreamingSource()
+#            MediaLoad = pyglet.media.load(vidPath)
+#
+#            player.queue(MediaLoad)
+#            player.play()
+#
+#
+#            @window.event
+#            def on_draw():
+#                if player.source and player.source.video_format:
+#                    player.get_texture().blit(50,50)
 
-            player.queue(MediaLoad)
-            player.play()
 
+        results = model.predict([bag_of_words(inp, words)])
+        results_index = numpy.argmax(results)
+        tag = labels[results_index]
 
-            @window.event
-            def on_draw():
-                if player.source and player.source.video_format:
-                    player.get_texture().blit(50,50)
-
-
-
-            pyglet.app.run()
+        for tg in data["intents"]:
+            if tg['tag'] == tag:
+                responses = tg['reponses']
+        aff_post = (random.choice(responses))
+        print(aff_post)
+        messages.insert(INSERT, '%s\n' % "Emma:")
+        messages.insert(INSERT, '%s\n' % aff_post)
+        messages.insert(INSERT, '\n')
 #def chat():
 
 

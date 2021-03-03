@@ -54,6 +54,9 @@ html,body{
     margin-top: 15%;
 }
 .titre{
+    margin-left: 29%;
+    margin-right: 29%;
+    max-width: 40%;
     text-transform: uppercase;
     color: black;
     text-align: center;
@@ -161,4 +164,17 @@ html,body{
 }
 .container .box:hover .icon .fab{
     font-size: 40px;
+}
+
+.bas{
+    border-top: #425066 solid 2px;
+    height: 100px;
+}
+.bas_droit{
+    color: black;
+    float: right;
+    margin-right: 5%;
+}
+.bas_gauche{
+    float: left;
 }
