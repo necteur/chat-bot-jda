@@ -48,7 +48,7 @@ la carte pass région génère t elle des avantages au lycées Jeanne d'Arc
 
 comment ce procurer la carte passe région
 
-y a t il un cdi
+✔y a t il un cdi
 
 ✔y a t il des ordres de passage à la cantine
 
@@ -62,9 +62,9 @@ quelle est le prix des repas occasionels à la cantine
 
 ✔comment ce procuré la carte de transport scolaire
 
-photocopie et impression ==> a intégrer avec le cdi
+✔photocopie et impression ==> a intégrer avec le cdi
 
-y a  t il des test de langue proposé par le lycée (cambridge)
+✔y a  t il des test de langue proposé par le lycée (cambridge)
 
 y  a t il une Assocation des parents d'élèves
 
