@@ -18,5 +18,5 @@ il est OBLIGATOIRE d'intaller :
   - tflearn < pip install tflearn > http://tflearn.org/installation/
   - nltk < pip install nltk > https://www.nltk.org/install.html
   - pour la version non finie, l'intallation de tensorflow-gpu <pip install tensorflow-gpu> (qui permet de réaliser les entrainements de l'IA avec le GPU) est fortement conseillée. Mais pour cela il est nécessaire de posséder un GPU de la marque NVidia et d'installer CUDA Toolkit (qui peut nesséssiter la désinstallation en cas d'erreur de NVidia frameview SDK) lien de téléchargement : https://developer.nvidia.com/cuda-downloads?
-
+  -  pyglet < pip install pyglet==1.3.2 >
 Bon chat !!! ༼ つ ◕_◕ ༽つ 

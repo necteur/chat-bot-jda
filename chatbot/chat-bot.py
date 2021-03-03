@@ -10,6 +10,7 @@ import tensorflow
 import random
 import json
 import time
+import pyglet
 from tensorflow.python.framework import ops
 with open("train.json", encoding="utf-8") as file: #ouverture du fichier de données (dictionnaire python)
     data = json.load(file)
@@ -99,22 +100,25 @@ def post(a) :
         messages.insert(INSERT, '\n')
         if inp.lower() == "quit":
             fen.destroy()
+        if inp.lower() == 'libellule' or 'ma libellule' or 'libelule' or 'ma libelule' :
+            vidPath = 'MA LIBELLULE.mp4'
+            window= pyglet.window.Window()
+            player = pyglet.media.Player()
+            source = pyglet.media.StreamingSource()
+            MediaLoad = pyglet.media.load(vidPath)
 
-        results = model.predict([bag_of_words(inp, words)])
-        results_index = numpy.argmax(results)
-        tag = labels[results_index]
+            player.queue(MediaLoad)
+            player.play()
 
-        for tg in data["intents"]:
-            if tg['tag'] == tag:
-                responses = tg['reponses']
-        aff_post = (random.choice(responses))
-        print(aff_post)
-        messages.insert(INSERT, '%s\n' % "Emma:")
-        wait = (random.randint(5,20))
-        wait = wait/10
-        time.sleep(wait)
-        messages.insert(INSERT, '%s\n' % aff_post)
-        messages.insert(INSERT, '\n')
+
+            @window.event
+            def on_draw():
+                if player.source and player.source.video_format:
+                    player.get_texture().blit(50,50)
+
+
+
+            pyglet.app.run()
 #def chat():
 
 
