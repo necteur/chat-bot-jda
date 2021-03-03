@@ -75,7 +75,7 @@ net = tflearn.regression(net) # prédiction de la sortie à partir de l'entrée
 model= tflearn.DNN(net)
 
 #entrainement de l'IA : n_epch=x le nombre de fois que l'on va entrainer le bot
-model.fit(training, output, n_epoch=10, batch_size=32, show_metric=True)
+model.fit(training, output, n_epoch=1000, batch_size=32, show_metric=True)
 model.save("model.tflearn")
 
 #prédiction
@@ -117,8 +117,18 @@ def post(a) :
 #                    player.get_texture().blit(50,50)
 
 
+        results = model.predict([bag_of_words(inp, words)])
+        results_index = numpy.argmax(results)
+        tag = labels[results_index]
 
-            pyglet.app.run()
+        for tg in data["intents"]:
+            if tg['tag'] == tag:
+                responses = tg['reponses']
+        aff_post = (random.choice(responses))
+        print(aff_post)
+        messages.insert(INSERT, '%s\n' % "Emma:")
+        messages.insert(INSERT, '%s\n' % aff_post)
+        messages.insert(INSERT, '\n')
 #def chat():
 
 
