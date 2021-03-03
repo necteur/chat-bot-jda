@@ -9,6 +9,7 @@ import tflearn
 import tensorflow
 import random
 import json
+import time
 from tensorflow.python.framework import ops
 with open("train.json", encoding="utf-8") as file: #ouverture du fichier de données (dictionnaire python)
     data = json.load(file)
@@ -90,10 +91,12 @@ def bag_of_words(s, words):
 
     return numpy.array(bag)
 
-def post() :
+def post(a) :
         #print("Vous pouvez commencer à parler (taper quit pour arrêter)!")
-
-        inp = form.get()
+        inp = input_user.get()
+        messages.insert(INSERT, '%s\n' % "vous: ")
+        messages.insert(INSERT, '%s\n' % inp)
+        messages.insert(INSERT, '\n')
         if inp.lower() == "quit":
             fen.destroy()
 
@@ -106,23 +109,34 @@ def post() :
                 responses = tg['reponses']
         aff_post = (random.choice(responses))
         print(aff_post)
-        aff_post_tk=Label(fen,text=aff_post)
-        aff_post_tk.grid(column=5,padx=20,pady=20)
+        messages.insert(INSERT, '%s\n' % "Emma:")
+        wait = (random.randint(5,20))
+        wait = wait/10
+        time.sleep(wait)
+        messages.insert(INSERT, '%s\n' % aff_post)
+        messages.insert(INSERT, '\n')
 #def chat():
 
 
 #tkinter
-fen = Tk()
-fen.title('JDA chatbot')
-fen.geometry("960x540")
-intro = Label(fen, text='Vous pouvez commencer à parler (taper quit pour arrêter)!')
-intro.grid(column=0,padx=20,pady=10)
 
-form = Entry(fen)
-form.grid(column=0,padx=20,pady=10)
-btn_valide = Button(fen, text='valider', command=post)
-btn_valide.grid(column=0,padx=20,pady=10)
-fen.mainloop()
+window = Tk()
+window.title("best chatbot ever")
+messages = Text(window)
+messages.pack()
 
+input_user = StringVar()
+input_field = Entry(window, text=input_user)
+input_field.pack(side=BOTTOM, fill=X)
+
+
+
+frame = Frame(window)
+input_field.bind("<Return>", post)
+messages.insert(INSERT, '%s\n' % "Vous pouvez commencer à parler (taper quit pour arrêter)")
+messages.insert(INSERT, '\n')
+frame.pack()
+
+window.mainloop()
 
 
