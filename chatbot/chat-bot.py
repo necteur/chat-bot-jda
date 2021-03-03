@@ -75,7 +75,7 @@ net = tflearn.regression(net) # prédiction de la sortie à partir de l'entrée
 model= tflearn.DNN(net)
 
 #entrainement de l'IA : n_epch=x le nombre de fois que l'on va entrainer le bot
-model.fit(training, output, n_epoch=10, batch_size=32, show_metric=True)
+model.fit(training, output, n_epoch=1000, batch_size=32, show_metric=True)
 model.save("model.tflearn")
 
 #prédiction
