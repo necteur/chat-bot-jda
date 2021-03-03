@@ -1,6 +1,6 @@
 {"intents":[
     {"tag": "bonjour",
-    "patterns":["bonjour","salut","slt"],
+    "patterns":["bonjour","salut"],
     "reponses": ["Bonjour, en quoi puis je vous etre utile"],
     "context_set":""},
 
@@ -71,16 +71,42 @@
 
     {"tag":"as",
     "patterns":["Je voudrais savoir si il y des as","j'aimerais savoir si vous proposez des as sur la pose méridienne"],
-    "reponses":["Oui, nous proposons des as (temporairement suspendue du a la cirse du covid 19)"],
+    "reponses":["Oui, nous proposons des as (temporairement suspendue du a la cirse du covid 19). Les sports sont proposes sur une affiche sur un panneau dedie. Le montant de la licence est de 20€"],
     "context_set":""},
 
     {"tag":"reussite",
     "patterns":["Je voudrais connaître le taux de réussite au lycée","Quel est le taux de réssite au lycée"],
     "reponses":["En 2020, 100% de eleves en filiere ES ont passe leur baccalaureat, 91% pour les L, et 100% pour les S"],
     "context_set":""},
+
     {"tag":"tarifs",
     "patterns":["Je voudrais connaître les tarifs d'inscription","Quels sont les prix à payer pour inscrire mon enfant","Quels sont les tarifs"],
     "reponses":["Les tarifs sont calculés en fonction de vos revenus, consultez ce lien pour en savoir plus : https://www.jda-gex.org/infos-pratiques/tarifs/"],
+    "context_set":""},
+
+    {"tag":"casiers",
+    "patterns":["Je voudrais en savoir plus sur les casiers","Comment les casiers sont-ils organisés au lycée","Faut-il acheter un cadenas pour les casiers"],
+    "reponses":["Les casiers se situent en dehors des classes. Les cadenas sont fournis par le lycee pour le prix de 10 euros. S'il est encore en bon etat a la fin de l'annee, les 10 euros sont alors rendus"],
+    "context_set":""},
+
+    {"tag":"manuels",
+    "patterns":["Je voudrais savoir si le lycée fournit des manuels","Les manuels sont-ils donnés par le lycée","Le lycée fournit-il les manuels"],
+    "reponses":["Les manuels sont fournis par le lycée, en fin d'annee, si certains sont abimes, une facture sera envoyee"],
+    "context_set":""},
+
+    {"tag":"cantine",
+    "patterns":["Je voudrais savoir comment fonctionne le passage à la cantine","Comment le passage à la cantine fonctionne-t-il"],
+    "reponses":["Un ordre de passage par niveau de classe est applique à la cantine. Avec la crise COVID-19, cet ordre de passage a été modifié, laissant désormais place a un passage par classe et non par niveau. Informations supplementaires : il existe des alternatives vegetariennes pour les eleves vegetariens. Les eleves peuvent emmener leur propre repas s'ils ont un certificat medical"],
+    "context_set":""},
+
+    {"tag":"transports",
+    "patterns":["Je voudrais en savoir plus sur les transports","Comment fonctionnent les transports scolaires"],
+    "reponses":["Les bus passent a 16h35 ou 17h25, en revanche, il est interdit aux lyceens de prendre ceux de 16h35. Vos parents doivent vous inscrire avant la rentree pour vous procurer la carte de bus"],
+    "context_set":""},
+
+    {"tag":"horaires",
+    "patterns":["Je voudrais connaître les horaires de cours","Quels sont les horaires de cours"],
+    "reponses":["Voici les horaires de cours. Matin : 8h30 : 1er cours / 9h25 : 2eme cours / 10h35 : 3eme cours / 11h30 : 4eme cours ou repas // Après-midi : 13h30 : 1er cours / 14h25 : 2eme cours / 15h35 : 3eme cours / 16h30 : dernier cours"],
     "context_set":""}
 ]
 }
