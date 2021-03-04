@@ -64,11 +64,10 @@ output= numpy.array(output)
 ops.reset_default_graph()
 net = tflearn.input_data(shape=[None, len(training[0])]) # couche d'entrer des neurones input
 # couche cachée des neurones qui vont "réfléchir" pour déterminer les règles puis les utiliser (4 couche qui continnent 16 neurones)
-net = tflearn.fully_connected(net, 64)
-net = tflearn.fully_connected(net, 64)
-net = tflearn.fully_connected(net, 64)
-net = tflearn.fully_connected(net, 64)
-net = tflearn.fully_connected(net, 64)
+net = tflearn.fully_connected(net, 128)
+net = tflearn.fully_connected(net, 128)
+net = tflearn.fully_connected(net, 128)
+net = tflearn.fully_connected(net, 128)
 net = tflearn.fully_connected(net, len(output[0]), activation="softmax") # sortie des nerones avec "l'activation" qui va permettre de changé des nombres incompréhensibles en probabilité
 #ici la fonction d'activation utilisée est softmax +info : https://fr.wikipedia.org/wiki/Fonction_softmax
 net = tflearn.regression(net) # prédiction de la sortie à partir de l'entrée
@@ -76,7 +75,7 @@ net = tflearn.regression(net) # prédiction de la sortie à partir de l'entrée
 model= tflearn.DNN(net)
 
 #entrainement de l'IA : n_epch=x le nombre de fois que l'on va entrainer le bot
-model.fit(training, output, n_epoch=10, batch_size=50, show_metric=True)
+model.fit(training, output, n_epoch=40000, batch_size=64, show_metric=True)
 model.save("model.tflearn")
 
 #prédiction
@@ -92,7 +91,7 @@ def bag_of_words(s, words):
                 bag[i] = 1
 
     return numpy.array(bag)
-def video():
+
 def post(a) :
         #print("Vous pouvez commencer à parler (taper quit pour arrêter)!")
         inp = input_user.get()
@@ -100,20 +99,20 @@ def post(a) :
         messages.insert(INSERT, '%s\n' % inp)
         if inp.lower() == "quit":
             window.destroy()
-        if inp.lower() == 'libellule' or 'ma libellule' or 'libelule' or 'ma libelule' :
-            video = pyglet.window.Window(600,600) # dimension de la fenetre
-            player = pyglet.media.Player() # création d'un player
-            MediaLoad = pyglet.media.load("MA LIBELLULE.mp4") # chargement de la video
+       # if inp.lower() == 'libellule' or 'ma libellule' or 'libelule' or 'ma libelule' :
+        #    video = pyglet.window.Window(600,600) # dimension de la fenetre
+       #     player = pyglet.media.Player() # création d'un player
+       #     MediaLoad = pyglet.media.load("MA LIBELLULE.mp4") # chargement de la video
 
-            player.queue(MediaLoad) # insertion de la video la dans le player
-            player.play() # jouer le media
+       #     player.queue(MediaLoad) # insertion de la video la dans le player
+       #     player.play() # jouer le media
 
-            @video.event
-            def on_draw(): # affichage
-                video.clear()
-                player.get_texture().blit(0,0)
-
-            pyglet.app.run()
+       #     @video.event
+      #      def on_draw(): # affichage
+       #         video.clear()
+        #        player.get_texture().blit(0,0)
+#
+     #       pyglet.app.run()
 
 
         results = model.predict([bag_of_words(inp, words)])
@@ -128,7 +127,7 @@ def post(a) :
         messages.insert(INSERT, '%s\n' % "Emma:")
         messages.insert(INSERT, '%s\n' % aff_post)
         messages.insert(INSERT, '\n')
-#def chat():
+        input_field.delete(0, 'end')
 
 
 #tkinter
@@ -151,5 +150,3 @@ messages.insert(INSERT, '\n')
 frame.pack()
 
 window.mainloop()
-
-
