@@ -40,7 +40,7 @@
     "context_set":""},
 
     {"tag":"inscription",
-    "patterns":["Quels documents sont attendus pour l'inscription","Je voudrais connaître les documents nécessaires a l'incription","Comment inscire mon enfant au lycee","J'aimerais connaître les documents nécessaires a l'incription"],
+    "patterns":["Quels documents sont attendus pour l'inscription","Je voudrais connaître les documents nécessaires a l'incription","Comment inscire mon enfant au lycee","J'aimerais connaître les documents nécessaires a l'incription","quelles sont les formalités d'inscription"],
     "reponses":["Les documents necessaires a l'inscription au lycee sont les bulletins contenant les resultats scolaires du college"],
     "context_set":""},
 
@@ -50,7 +50,7 @@
     "context_set":""},
 
     {"tag":"numero",
-    "patterns":["Je voudrais savoir quel numero il faut appeler","Quel est le numero à appeler pour s'inscrire","Quel numéro faut-il appeler pour inscrire mon enfant","J'aimerais savoir quel numero il faut appeler"],
+    "patterns":["Je voudrais savoir quel numero il faut appeler","Quel est le numero à appeler pour s'inscrire","Quel numéro faut-il appeler pour inscrire mon enfant","J'aimerais savoir quel numero il faut appeler","comment contacter le lycée / le bureau des inscriptions"],
     "reponses":["Le numéro a appeler pour les inscriptions au lycee est le suivant : 04 50 28 36 14"],
     "context_set":""},
 
@@ -75,7 +75,7 @@
     "context_set":""},
 
     {"tag":"reussite",
-    "patterns":["Je voudrais connaître le taux de réussite au lycée","Quel est le taux de réssite au lycée","J'aimerais connaître le taux de réussite au lycée"],
+    "patterns":["Je voudrais connaître le taux de réussite au lycée","Quel est le taux de réussite au lycée","J'aimerais connaître le taux de réussite au lycée","taux de réussite au bac"],
     "reponses":["En 2020, 100% de eleves en filiere ES ont passe leur baccalaureat, 91% pour les L, et 100% pour les S"],
     "context_set":""},
 
