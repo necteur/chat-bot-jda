@@ -80,7 +80,7 @@ model= tflearn.DNN(net)
 try:
     model.load("model.tflearn")
 except :
-    model.fit(training, output, n_epoch=5000, batch_size=8, show_metric=True)
+    model.fit(training, output, n_epoch=40000, batch_size=64, show_metric=True)
     model.save("model.tflearn")
 
 
@@ -99,12 +99,13 @@ def bag_of_words(s, words):
     return numpy.array(bag)
 
 
-def chat():
-    print("Start talking with the bot (type quit to stop)!")
-    while True:
-        inp = input("Vous: ")
+def post(a) :
+        #print("Vous pouvez commencer à parler (taper quit pour arrêter)!")
+        inp = input_user.get()
+        messages.insert(INSERT, '%s\n' % "vous: ")
+        messages.insert(INSERT, '%s\n' % inp)
         if inp.lower() == "quit":
-            break
+            window.destroy()
 
         results = model.predict([bag_of_words(inp, words)])
         results_index = numpy.argmax(results)
@@ -113,7 +114,31 @@ def chat():
         for tg in data["intents"]:
             if tg['tag'] == tag:
                 responses = tg['reponses']
+        aff_post = (random.choice(responses))
+        print(aff_post)
+        messages.insert(INSERT, '%s\n' % "Emma:")
+        messages.insert(INSERT, '%s\n' % aff_post)
+        messages.insert(INSERT, '\n')
+        input_field.delete(0, 'end')
 
-        print(random.choice(responses))
 
-chat()
+#tkinter
+
+window = Tk()
+window.title("best chatbot ever")
+messages = Text(window)
+messages.pack()
+
+input_user = StringVar()
+input_field = Entry(window, text=input_user)
+input_field.pack(side=BOTTOM, fill=X)
+
+
+
+frame = Frame(window)
+input_field.bind("<Return>", post)
+messages.insert(INSERT, '%s\n' % "Vous pouvez commencer à parler (taper quit pour arrêter)")
+messages.insert(INSERT, '\n')
+frame.pack()
+
+window.mainloop()
