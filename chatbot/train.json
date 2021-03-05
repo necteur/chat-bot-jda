@@ -10,7 +10,7 @@
     "context_set":""},
 
     {"tag":"langue",
-    "patterns":["je voudrais savoir quelle langue vous enseignez","je voudrais savoir quelles langues sont disponibles","je voudrais savoir quelles langues sont enseignées","j'aimerais' savoir quelles langues sont enseignées"],
+    "patterns":["je voudrais savoir quelle langue vous enseignez","je voudrais savoir quelles langues sont disponibles","je voudrais savoir quelles langues sont enseignées","j'aimerais' savoir quelles langues sont enseignées","j'aimerais savoir quelles langues sont disponibles"],
     "reponses":["Nous enseignons : l'espagnol, l'anglais, l'allemand, le latin, nous avons une section anglophone et une section europe"],
     "context_set":""},
 
