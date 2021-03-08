@@ -1,7 +1,8 @@
 .header {
-    padding: 60px;
-    text-align: center;
-    background: #00e6e6;
+    width: 100%;
+    padding: 10px;
+    text-align: left;
+    background: #0984e3;
     color: white;
-    font-size: 30px
+    font-size: 20px
 }
