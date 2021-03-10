@@ -62,3 +62,15 @@ html,body{
 .sous_titre{
     text-decoration: underline;
 }
+.seperation{
+    border-top: 1px solid #dadada;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    margin-left: 20%;
+    margin-right: 20%;
+}
+.ilustration{
+    margin-left: 25%;
+    height: auto;
+    width: 75%;
+}
