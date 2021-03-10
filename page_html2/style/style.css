@@ -38,11 +38,10 @@ body{
     background-color: #5064d4
 }
 
-.titre{
-    text-align: center;
-    text-decoration: underline
+p{
+	text-align: center;
 }
 
-.texte{
-    text-align: center;
+.titre{
+	text-decoration: underline;
 }
