@@ -126,7 +126,11 @@
     
     {"tag":"blague",
     "patterns":["raconte moi une blague","dis moi une blague","dites moi une blague"],
-    "reponses":["La maîtresse dit à Toto : Tu es épicier. J’entre dans ton magasin et je choisis une salade à 1 euro, un kilo de carottes à 3 euros et trois litres de jus d’oranges à 4,50 euros. Combien je te dois ?   Toto réfléchit un moment et se met dans la peau de l’épicier,    - Ne vous en faites pas ma p’tite dame, vous me réglerez votre note demain !","On ne dit pas un microprocesseur. Mais un petit prof.","Quelle est le sport le plus silencieux ?   Le parachhhhhhhuuuutt","Un geek ne s'ennuis pas! Il se fichier","Toc toc qui est la... bah Emma"],
+    "reponses":["La maîtresse dit à Toto : Tu es epicier. J’entre dans ton magasin et je choisis une salade à 1 euro, un kilo de carottes à 3 euros et trois litres de jus d’oranges à 4,50 euros. Combien je te dois ?   Toto reflechit un moment et se met dans la peau de l’epicier,    - Ne vous en faites pas ma p’tite dame, vous me reglerez votre note demain !","On ne dit pas un microprocesseur. Mais un petit prof.","Quelle est le sport le plus silencieux ?   Le parachhhhhhhuuuutt","Un geek ne s'ennuis pas! Il se fichier","Toc toc qui est la... bah Emma"],
+    "context_set":""},
+    {"tag":"avast",
+    "patterns":["tu du du"],
+    "reponses":["une menace a ete detecte","la base viral VPS a ete mise a jour"],
     "context_set":""}
 ]
 }
