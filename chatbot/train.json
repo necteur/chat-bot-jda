@@ -55,12 +55,12 @@
     "context_set":""},
 
     {"tag":"etudes",
-    "patterns":["Je voudrais savoir si des etudes surveillées sont proposées","Le lycée propose-t-il des études surveillées","J'aimerais savoir si des etudes surveillées sont proposées"],
+    "patterns":["Je voudrais savoir si des etudes surveillées sont proposées","Le lycée propose-t-il des études surveillées","J'aimerais savoir si des etudes surveillées sont proposées","comment se déroulent les études"],
     "reponses":["Oui, des heures d'etude surveillee peuvent etre fixees pendant les heures de pause de l'eleve"],
     "context_set":""},
 
     {"tag":"messe au lycee",
-    "patterns":["Je voudrais savoir si des messes sont organisees au lycee","le lycee propose-t-il des messes","y'a-t-il des moments de priere ou de messe au lycee","J'aimerais savoir si des messes sont organisees au lycee"],
+    "patterns":["Je voudrais savoir si des messes sont organisees au lycee","le lycee propose-t-il des messes","y'a-t-il des moments de priere ou de messe au lycee","J'aimerais savoir si des messes sont organisees au lycee","le lycée propose t il des messes","y a-t-il des messes"],
     "reponses":["Oui, des messes sont organisees au lycee notamment pour les fetes chretiennes, elles sont neanmoins facultatives"],
     "context_set":""},
 
@@ -80,7 +80,7 @@
     "context_set":""},
 
     {"tag":"tarifs",
-    "patterns":["Je voudrais connaître les tarifs d'inscription","Quels sont les prix à payer pour inscrire mon enfant","Quels sont les tarifs","J'aimerais connaître les tarifs d'inscription"],
+    "patterns":["Je voudrais connaître les tarifs d'inscription","Quels sont les prix à payer pour inscrire mon enfant","Quels sont les tarifs","J'aimerais connaître les tarifs d'inscription","qu'est le prix d'une année au lycée"],
     "reponses":["Les tarifs sont calculés en fonction de vos revenus, consultez ce lien pour en savoir plus : https://www.jda-gex.org/infos-pratiques/tarifs/"],
     "context_set":""},
 
@@ -100,12 +100,12 @@
     "context_set":""},
 
     {"tag":"transports",
-    "patterns":["Je voudrais en savoir plus sur les transports","Comment fonctionnent les transports scolaires","J'aimerais en savoir plus sur les transports"],
+    "patterns":["Je voudrais en savoir plus sur les transports","Comment fonctionnent les transports scolaires","J'aimerais en savoir plus sur les transports","y a t il des transport en commun"],
     "reponses":["Les bus passent a 16h35 ou 17h25, en revanche, il est interdit aux lyceens de prendre ceux de 16h35. Vos parents doivent vous inscrire avant la rentree pour vous procurer la carte de bus"],
     "context_set":""},
 
     {"tag":"horaires",
-    "patterns":["Je voudrais connaître les horaires de cours","Quels sont les horaires de cours","J'aimerais connaître les horaires de cours"],
+    "patterns":["Je voudrais connaître les horaires de cours","Quels sont les horaires de cours","J'aimerais connaître les horaires de cours","horraires des cours"],
     "reponses":["Voici les horaires de cours. Matin : 8h30 : 1er cours / 9h25 : 2eme cours / 10h35 : 3eme cours / 11h30 : 4eme cours ou repas // Après-midi : 13h30 : 1er cours / 14h25 : 2eme cours / 15h35 : 3eme cours / 16h30 : dernier cours"],
     "context_set":""},
 
@@ -115,13 +115,13 @@
     "context_set":""},
 
     {"tag":"test_langue",
-    "patterns":["Je voudrais savoir s'il est possible d'être évalué sur une langue","Y a t-il des examens en langues étrangères","J'aimerais savoir s'il est possible d'être évalué sur une langue"],
+    "patterns":["Je voudrais savoir s'il est possible d'être évalué sur une langue","Y a t-il des examens en langues étrangères","J'aimerais savoir s'il est possible d'être évalué sur une langue","peut on passé le cambridge"],
     "reponses":["Il est possible de passer un test de Cambridge en anglais en terminale"],
     "context_set":""},
 
     {"tag":"cdi",
     "patterns":["Que peut-on faire au cdi","Je voudrais savoir ce que le cdi propose","qu'est-t-il possible de faire au cdi","J'aimerais savoir ce que le cdi propose"],
-    "reponses":["Il est evidemment possible d'imprimer des travaux ou autres au CDI. Il est egalement possible d'utiliser les ordinateurs ou d'emprunter des livres pour une duree discutee au moment de l'emprunt"],
+    "reponses":["Il est possible d'imprimer des travaux ou autres au CDI. Il est egalement possible d'utiliser les ordinateurs ou d'emprunter des livres pour une duree discutee au moment de l'emprunt"],
     "context_set":""},
     
     {"tag":"blague",
