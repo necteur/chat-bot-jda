@@ -1,6 +1,6 @@
 {"intents":[
     {"tag": "bonjour",
-    "patterns":["bonjour","salut"],
+    "patterns":["bonjour","salut","hey"],
     "reponses": ["Bonjour, en quoi puis je vous etre utile"],
     "context_set":""},
 
