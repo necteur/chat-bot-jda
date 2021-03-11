@@ -24,7 +24,7 @@
     "context_set":""},
 
     {"tag":"menu",
-    "patterns":["y a t il des repas sans viande", "y a t il des repas pour les végétariens","y a t il un menu végétarien","y a t il un menu sans viande","j'aimerais savoir si le lycée propose des repas végétariens"],
+    "patterns":["menu vegetarien","y a t il des repas sans viande", "y a t il des repas pour les végétariens","y a t il un menu végétarien","y a t il un menu sans viande","j'aimerais savoir si le lycée propose des repas végétariens"],
     "reponses":["Chaque jour un  menu alternatif pour les vegetariens est propose a la cantine"],
     "context_set":""},
     
@@ -34,7 +34,7 @@
     "context_set":""},
 
     {"tag":"religion",
-    "patterns":["Les cours de religion sont ils obligatoires","les cours de cathéchisme sont ils obligatoires","le cathéchisme est il obligatoire","j'aimerais savoir si les cours de cathéchisme sont obligatoires"],
+    "patterns":["y a t il des cours de catéchisme","Les cours de religion sont ils obligatoires","les cours de cathéchisme sont ils obligatoires","le cathéchisme est il obligatoire","j'aimerais savoir si les cours de cathéchisme sont obligatoires"],
     "reponses":["Oui les cours de cathechisme sont obligatoires mais differents parcours sont proposes aux eleves. Ces cours sont au rythme de 1 heure toutes les deux semaines"],
     "context_set":""},
 
@@ -59,7 +59,7 @@
     "context_set":""},
 
     {"tag":"etudes",
-    "patterns":["Je voudrais savoir si des etudes surveillées sont proposées","Le lycée propose-t-il des études surveillées","J'aimerais savoir si des etudes surveillées sont proposées","comment se déroulent les études"],
+    "patterns":["Je voudrais savoir si des etudes surveillées sont proposées","Le lycée propose-t-il des études surveillées","J'aimerais savoir si des etudes surveillées sont proposées","comment se déroulent les études"," y a t il une etude"],
     "reponses":["Oui, des heures d'etude surveillee peuvent etre fixees pendant les heures de pause de l'eleve"],
     "context_set":""},
 
@@ -84,7 +84,7 @@
     "context_set":""},
 
     {"tag":"tarifs",
-    "patterns":["combien coute la scolarité","Je voudrais connaître les tarifs d'inscription","Quels sont les prix à payer pour inscrire mon enfant","Quels sont les tarifs","J'aimerais connaître les tarifs d'inscription","qu'est le prix d'une année au lycée"],
+    "patterns":["combien coute la scolarité","Je voudrais connaître les tarifs d'inscription","Quels sont les prix à payer pour inscrire mon enfant","Quels sont les tarifs","J'aimerais connaître les tarifs d'inscription","qu'est le prix d'une année au lycée","quels sont vos prix pour une inscription"],
     "reponses":["Les tarifs sont calculés en fonction de vos revenus, consultez ce lien pour en savoir plus : https://www.jda-gex.org/infos-pratiques/tarifs/"],
     "context_set":""},
 
@@ -113,7 +113,7 @@
     "context_set":""},
 
     {"tag":"horaires",
-    "patterns":["Je voudrais connaître les horaires de cours","Quels sont les horaires de cours","J'aimerais connaître les horaires de cours","horraires des cours"],
+    "patterns":["Je voudrais connaître les horaires de cours","Quels sont les horaires de cours","J'aimerais connaître les horaires de cours","horraires des cours","quels sont les horaires"],
     "reponses":["Voici les horaires de cours. Matin : 8h30 : 1er cours / 9h25 : 2eme cours / 10h35 : 3eme cours / 11h30 : 4eme cours ou repas // Après-midi : 13h30 : 1er cours / 14h25 : 2eme cours / 15h35 : 3eme cours / 16h30 : dernier cours"],
     "context_set":""},
 
