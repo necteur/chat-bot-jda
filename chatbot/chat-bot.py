@@ -75,7 +75,7 @@ net = tflearn.regression(net) # prédiction de la sortie à partir de l'entrée
 model= tflearn.DNN(net)
 
 #entrainement de l'IA : n_epch=x le nombre de fois que l'on va entrainer le bot
-model.fit(training, output, n_epoch=1000, batch_size=64, show_metric=True)
+model.fit(training, output, n_epoch=5000, batch_size=100, show_metric=True)
 model.save("model.tflearn")
 
 #prédiction
@@ -95,7 +95,7 @@ def bag_of_words(s, words):
 def post(a) :
         #print("Vous pouvez commencer à parler (taper quit pour arrêter)!")
         inp = input_user.get()
-        messages.insert(INSERT, '%s\n' % "vous: ")
+
         messages.insert(INSERT, '%s\n' % inp)
         if inp.lower() == "quit":
             window.destroy()
@@ -127,6 +127,7 @@ def post(a) :
         messages.insert(INSERT, '%s\n' % "Emma:")
         messages.insert(INSERT, '%s\n' % aff_post)
         messages.insert(INSERT, '\n')
+        messages.insert(INSERT, '%s\n' % "vous: ")
         input_field.delete(0, 'end')
 
 
@@ -147,6 +148,7 @@ frame = Frame(window)
 input_field.bind("<Return>", post)
 messages.insert(INSERT, '%s\n' % "Vous pouvez commencer à parler (taper quit pour arrêter)")
 messages.insert(INSERT, '\n')
+messages.insert(INSERT, '%s\n' % "vous: ")
 frame.pack()
 
 window.mainloop()
