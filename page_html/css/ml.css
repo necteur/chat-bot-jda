@@ -74,3 +74,15 @@ html,body{
     height: auto;
     width: 75%;
 }
+.bas{
+    border-top: #425066 solid 2px;
+    height: 100px;
+}
+.bas_droit{
+    color: black;
+    float: right;
+    margin-right: 5%;
+}
+.bas_gauche{
+    float: left;
+}
