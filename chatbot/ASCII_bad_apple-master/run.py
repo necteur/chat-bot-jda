@@ -1,7 +1,7 @@
 import time, os
 
 if __name__ == '__main__':
-	f = open('play.txt', 'r')
+	f = open('./ASCII_bad_apple-master/play.txt', 'r')
 	frame_raw = f.read()
 	frame_raw = frame_raw.replace('.', ' ')
 	f.close()
@@ -10,7 +10,7 @@ if __name__ == '__main__':
 	#os.system('mplayer test.mp4 &')
 	init_time = time.time()
 	while time.time() <= init_time + 218:
-		os.system('clear')
+		os.system('')
 		print(frames[int((time.time()-init_time)*10)])
 		time.sleep(0.05)
 
