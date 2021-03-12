@@ -11,6 +11,7 @@ import random
 import json
 import time
 import pyglet
+import os
 from tensorflow.python.framework import ops
 with open("train.json", encoding="utf-8") as file: #ouverture du fichier de données (dictionnaire python)
     data = json.load(file)
@@ -99,20 +100,8 @@ def post(a) :
         messages.insert(INSERT, '%s\n' % inp)
         if inp.lower() == "quit":
             window.destroy()
-       # if inp.lower() == 'libellule' or 'ma libellule' or 'libelule' or 'ma libelule' :
-        #    video = pyglet.window.Window(600,600) # dimension de la fenetre
-       #     player = pyglet.media.Player() # création d'un player
-       #     MediaLoad = pyglet.media.load("MA LIBELLULE.mp4") # chargement de la video
-
-       #     player.queue(MediaLoad) # insertion de la video la dans le player
-       #     player.play() # jouer le media
-
-       #     @video.event
-      #      def on_draw(): # affichage
-       #         video.clear()
-        #        player.get_texture().blit(0,0)
-#
-     #       pyglet.app.run()
+        if inp.lower() == "apple":
+            os.system("start cmd /k python ./ASCII_bad_apple-master/run.py")
 
 
         results = model.predict([bag_of_words(inp, words)])
