@@ -117,7 +117,7 @@ net = tflearn.regression(net) # prédiction de la sortie à partir de l'entrée
 model= tflearn.DNN(net)
 
 #entrainement de l'IA : n_epch=x le nombre de fois que l'on va entrainer le bot
-model.fit(training, sortie, n_epoch=35000, batch_size=128, show_metric=True)
+model.fit(training, sortie, n_epoch=30, batch_size=128, show_metric=True)
 model.save("model.tflearn")
 
 
@@ -133,8 +133,6 @@ messages.pack()
 input_user = StringVar()
 input_field = Entry(window, text=input_user)
 input_field.pack(side=BOTTOM, fill=X)
-
-
 
 frame = Frame(window)
 input_field.bind("<Return>", post)
