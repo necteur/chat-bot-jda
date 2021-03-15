@@ -14,6 +14,7 @@ import os
 from tensorflow.python.framework import ops
 with open("train.json", encoding="utf-8") as file: #ouverture du fichier de données (dictionnaire python)
     data = json.load(file)
+
 #prédiction
 def traitement_des_donnees(s, features):
     bag = [0 for _ in range(len(features))]
@@ -116,7 +117,7 @@ net = tflearn.regression(net) # prédiction de la sortie à partir de l'entrée
 model= tflearn.DNN(net)
 
 #entrainement de l'IA : n_epch=x le nombre de fois que l'on va entrainer le bot
-model.fit(training, sortie, n_epoch=1000, batch_size=128, show_metric=True)
+model.fit(training, sortie, n_epoch=35000, batch_size=128, show_metric=True)
 model.save("model.tflearn")
 
 
