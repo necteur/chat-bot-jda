@@ -14,9 +14,7 @@ documentation sur les résaux de neurones : https://colab.research.google.com/dr
 Ne pas utiliser python 3.9, versions prises en charge : 3.8(instable), 3.7, 3.6, 3.5, 3.4, 3.3, 3.2, 3.1, 3.0 (python 2.x, 1.x non pris en charge)
 le programme ne fonctionne pas avec les librairies intégrées de base dans python
 il est OBLIGATOIRE d'intaller :
-  - tensorflow < pip install tensorflow > https://www.tensorflow.org/install?hl=fr
-  - tflearn < pip install tflearn > http://tflearn.org/installation/
-  - nltk < pip install nltk > https://www.nltk.org/install.html
-  - pour la version non finie, l'intallation de tensorflow-gpu <pip install tensorflow-gpu> (qui permet de réaliser les entrainements de l'IA avec le GPU) est fortement conseillée. Mais pour cela il est nécessaire de posséder un GPU de la marque NVidia et d'installer CUDA Toolkit (qui peut nesséssiter la désinstallation en cas d'erreur de NVidia frameview SDK) lien de téléchargement : https://developer.nvidia.com/cuda-downloads?
-  -  pyglet < pip install pyglet==1.3.2 >
+  - setup.bat (execute un programme appeller setup.py qui contient toute les installations pip)
+  - pour tester l'entrainement, l'intallation de tensorflow-gpu <pip install tensorflow-gpu> (qui permet de réaliser les entrainements de l'IA avec le GPU) est fortement conseillée. Cela il est nécessaire de posséder un GPU de la marque NVidia (qui contient des coeur CUDA, voir model compatible : https://docs.nvidia.com/pdf/CUDA_Compatibility.pdf) et d'installer CUDA Toolkit (qui peut nesséssiter la désinstallation en cas d'erreur de NVidia frameview SDK) lien de téléchargement : https://developer.nvidia.com/cuda-downloads.
+  vous pouvez aussi utilisé google colab mais il ne gère pas les interfaces graphiques, il faudra aussi selectionner dans les paramètre du notebook l'accélération TPU (qui est beaucoup plus éfficace pour l'entrainement d'IA que les GPUs) 
 Bon chat !!! ༼ つ ◕_◕ ༽つ 
