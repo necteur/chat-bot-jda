@@ -55,52 +55,55 @@ def post(a) :
         messages.insert(INSERT, '%s\n' % "vous: ")
         input_field.delete(0, 'end')
 
+try :
+    with open("data.pickle", "rb") as f:
+        mots, labels, training, sortie =pickle.load(f)
+except :
+    features = []
+    labels = []
+    mot1 = []
+    mot2 = []
+    training =[]
+    sortie = []
 
-features = []
-labels = []
-mot1 = []
-mot2 = []
-training =[]
-sortie = []
+    for intent in data["intents"]:      #on parcourt tout le data (ici des dictionnaires de données) qui est compris dans le dictionnaire intents
+        for pattern in intent["patterns"]:      # on parcourt le dictionnaire pour voir les différentes "feature(input que l'IA va devoir faire face)" appellé ici pattern
+            mots = nltk.word_tokenize(pattern)      # séparation des mots dans une phrase pour permettre la modularité
+            features.extend(mots)      #ajout de la liste mots à la liste features pour connaître les mots qui sont dans la "feature"
+            mot1.append(mots)
+            mot2.append(intent["tag"])
 
-for intent in data["intents"]:      #on parcourt tout le data (ici des dictionnaires de données) qui est compris dans le dictionnaire intents
-    for pattern in intent["patterns"]:      # on parcourt le dictionnaire pour voir les différentes "feature(input que l'IA va devoir faire face)" appellé ici pattern
-        mots = nltk.word_tokenize(pattern)      # séparation des mots dans une phrase pour permettre la modularité
-        features.extend(mots)      #ajout de la liste mots à la liste features pour connaître les mots qui sont dans la "feature"
-        mot1.append(mots)
-        mot2.append(intent["tag"])
+            if intent["tag"] not in labels: # ajout de tous les types de données pour qu'ils soient par la suite traités et que aucun ne soit oublié
+                labels.append(intent["tag"])
 
-        if intent["tag"] not in labels: # ajout de tous les types de données pour qu'ils soient par la suite traités et que aucun ne soit oublié
-            labels.append(intent["tag"])
+    features = [stemmer.stem(w.lower()) for w in features if w not in "?"] #permet d'avoir la racine des mots et de comprendre le sens des mots ex :bnjr veux dire bonjour, gentiment ==> gentil ce qui va lui permettre de comprendre des mots dérivés (ex : "il est d'un gentille" l'IA va comprendre "il est gentil")
+    features = sorted(list(set(features))) # création d'une liste de mots simplifiés qui vont simplifier l'analyse des données
 
-features = [stemmer.stem(w.lower()) for w in features if w not in "?"] #permet d'avoir la racine des mots et de comprendre le sens des mots ex :bnjr veux dire bonjour, gentiment ==> gentil ce qui va lui permettre de comprendre des mots dérivés (ex : "il est d'un gentille" l'IA va comprendre "il est gentil")
-features = sorted(list(set(features))) # création d'une liste de mots simplifiés qui vont simplifier l'analyse des données
-
-labels = sorted(labels)
-
-
-
-out_empty = [0 for _ in range(len(labels))]
-
-for x,doc in enumerate(mot1):
-    bag = []
-
-    mots= [stemmer.stem(w) for w in doc]
-
-    for w in features:
-        if w in mots:
-            bag.append(1)
-        else:
-            bag.append(0)
-    sortie_row = out_empty[:]
-    sortie_row[labels.index(mot2[x])] = 1
-
-    training.append(bag)
-    sortie.append(sortie_row)
+    labels = sorted(labels)
 
 
-training = numpy.array(training)
-sortie= numpy.array(sortie)
+
+    out_empty = [0 for _ in range(len(labels))]
+
+    for x,doc in enumerate(mot1):
+        bag = []
+
+        mots= [stemmer.stem(w) for w in doc]
+
+        for w in features:
+            if w in mots:
+                bag.append(1)
+            else:
+                bag.append(0)
+        sortie_row = out_empty[:]
+        sortie_row[labels.index(mot2[x])] = 1
+
+        training.append(bag)
+        sortie.append(sortie_row)
+
+
+    training = numpy.array(training)
+    sortie= numpy.array(sortie)
 
 #création du réseau de neurones ici 4 neurones
 ops.reset_default_graph()
@@ -115,10 +118,12 @@ net = tflearn.fully_connected(net, len(sortie[0]), activation="softmax") # sorti
 net = tflearn.regression(net) # prédiction de la sortie à partir de l'entrée
 
 model= tflearn.DNN(net)
-
-#entrainement de l'IA : n_epch=x le nombre de fois que l'on va entrainer le bot
-model.fit(training, sortie, n_epoch=100000, batch_size=140, show_metric=True)
-model.save("model.tflearn")
+try:
+    model.load("./model.tflearn")
+except:
+    #entrainement de l'IA : n_epch=x le nombre de fois que l'on va entrainer le bot
+    model.fit(training, sortie, n_epoch=100000, batch_size=140, show_metric=True)
+    model.save("model.tflearn")
 
 
 

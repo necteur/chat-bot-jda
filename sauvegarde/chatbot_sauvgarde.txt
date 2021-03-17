@@ -270,7 +270,7 @@ try :
     model.load("./model.tflearn")
 except:
     #entrainement de l'IA : n_epch=x le nombre de fois que l'on va entrainer le bot
-    model.fit(training, sortie, n_epoch=30000, batch_size=128, show_metric=True)
+    model.fit(training, sortie, n_epoch=100000, batch_size=140, show_metric=True)
     model.save("model.tflearn")
 
 
