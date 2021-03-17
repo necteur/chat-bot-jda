@@ -29,26 +29,39 @@
     <h1 class="titre">Documentation</h1>
 
     <h2 class="sous_titre">Installation</h2>
-    <p>Le chatbot à besoin de modules en plus qui ne sont pas intégrées dans python, ces modules sont essentiellement destinées à simplifier le programme. Il faut donc installer :</p><br>
-    <p>-nltk avec <code>pip install nltk</code></p>
-    <p>-tflearn avec <code>pip install tflearn</code></p>
-    <p>-tensorflow avec <code>pip install tensorflow</code></p><br>
-    <p>si vous disposé d'un GPU nvidia qui contient des cudas cores vous pouver innstaller tensorflow-gpu avec <code>pip isntall tensorflow-gpu</code> cela permeterra d'utilisé la puissance de calcule de votre gpu pour entrainée le chatbot</p><br>
+    <p>Le chatbot à besoin de modules en plus qui ne sont pas intégrées dans python, ces modules sont essentiellement destinées à simplifier le programme.Un programme nommé setup.bat permet d'installer tout les modules nécessaires en seulement 2 cliques. Si vous voulez faire les intallations manuellement il faudra donc installer :</p><br>
+    <p>- nltk avec <code>pip install nltk</code></p>
+    <p>- numpy avec <code>pip install numpy</code></p>
+    <p>- os avec <code>pip install os</code></p>
+    <p>- tkinter avec <code>pip install tkinter</code></p>
+    <p>- json avec <code> pip install json</code></p>
+    <p>- tflearn avec <code>pip install tflearn</code></p>
+    <p>- tensorflow avec <code>pip install tensorflow</code></p><br>
+    <p>si vous disposé d'un GPU nvidia qui contient des cudas cores vous pouver innstaller tensorflow-gpu avec <code>pip isntall tensorflow-gpu</code> cela permeterra d'utilisé la puissance de calcule de votre gpu pour entrainée le chatbot.</p><br>
     <br><p>Nous vous recommandons d'utiliser google colab et d'activé l'accelration par GPU ou TPU</p>
     <br><p>retrouver toute les informations ici <a href="../../README.txt">dans le README.txt</a></p>
+    
+    
     <div class="seperation">
     </div>
+
+
     <h2 class="sous_titre">Démarche</h2>
-    <p>Le principe du chat bot est de calculer la probabilité que la réponse choisie soit juste.</p> <br>
-    <p>Pour cela on analyse tout les mots qui sont dans la phrase donné pour pouvoir ensuite regarder combien de mot sont en commun dans la phrase donné et dans les phrases du data qui sert à entrainée l'IA. L'IA va permettre de comprendre les racines des mots de savoir que gentillement peu vouloir dire gentillement. L'IA va elle même deviné les règles ce qui va lui permettre de donné une réponse la plus approprié possible</p>
+    <p>Le principe du chat bot est de calculer la probabilité de toute les réponses disponibles et de choisir celle qui est la plus probable d'entre elle selon lui.</p> <br>
+    <p>Pour cela on analyse tout les mots qui sont dans la phrase donné pour pouvoir ensuite regarder combien de mots sont en commun dans la phrase donné et dans les phrases du data qui sert à entrainée l'IA. L'IA va permettre de comprendre les racines des mots de savoir que gentillement peu vouloir dire gentillement et de devinée qu'elles sont les mots important de la phrase, il va donc éliminé par lui même les : un, une, de, les, le, la... . L'intérait d'utilisé l'IA est qu'elle va d'elle même deviné les règles, ce qui va lui permettre d'être flexibles sur les questions posée et donc de donnée une réponses aproprié.</p>
+    
+    
     <div class="seperation">
     </div>
-    <h2 class="sous_titre">Le fonctionnement de l'ia</h2>
+
+
+    <h2 class="sous_titre">Le fonctionnement de l'IA</h2>
     <p>Pour ce chat bot le model choisie d'IA est le supervised learning.</p>
     <br>
-    <p>Le supervised learning est une technique d'entrainement d'IA qui conssiste à donner les entrés et les sorties qui corresponde aux entrés pour que l'IA devine par elle même les règles.</p>
+    <p>Le supervised learning est une technique d'entrainement d'IA qui conssiste à donner les entrés et les sorties à un programme qui va posé les questions à l'IA qui va donné une réponse, lorsque la réponse est fausse l'IA enregistrera que cette réponse est fausse et qu'il faut donc donné une autre réponse. Lorsqu'elle a juste elle stocke la réponse juste pourvoir la redonné au moment où on lui demande.</p>
     <img src="../image/supervisedlearning.png" class="ilustration">
 </div>
+
 <div class="bas">
     <ul class="bas_gauche">
         <li class="m-lien">Nous contacter</li>

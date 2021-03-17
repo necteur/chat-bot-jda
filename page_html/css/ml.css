@@ -51,7 +51,7 @@ html,body{
     border-color: #425066;
 }
 .text{
-    margin: 20% 5% 25% 25%;
+    margin: 20% 25% 5% 25%;
     max-width: 50%;
 }
 .text h1{
@@ -71,6 +71,7 @@ html,body{
 }
 .ilustration{
     margin-left: 25%;
+
     height: auto;
     width: 75%;
 }
