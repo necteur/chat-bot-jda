@@ -47,7 +47,7 @@ p{
 }
 
 .pied{
-	border-top: rgb(190, 28, 28) 3px;
+	border-top: rgb(190, 28, 28) solid 3px;
 	height: 100px;
 }
 
