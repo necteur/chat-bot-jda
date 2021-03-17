@@ -44,7 +44,7 @@
     "context_set":""},
 
     {"tag":"inscription",
-    "patterns":["inscription","Comment s'inscrire au lycée","Quels documents sont attendus pour l'inscription","Je voudrais connaître les documents nécessaires a l'incription","Comment inscire mon enfant au lycee","J'aimerais connaître les documents nécessaires a l'incription","quelles sont les formalités d'inscription"],
+    "patterns":["inscription","Comment s'inscrire au lycée","Quels documents sont attendus pour l'inscription","Je voudrais connaître les documents nécessaires a l'incription","Comment inscire mon enfant au lycee","J'aimerais connaître les documents nécessaires a l'incription","quelles sont les formalités d'inscription","comment peut on inscrire son enfant"],
     "reponses":["Pour s'inscrire il faudra : prendre un rendez vous avec le directeur ou le directeur adjoint et envoyer les bulletins contenant les resultats scolaires du college. Pour cela apeller le 04 50 28 36 14."],
     "context_set":""},
 
