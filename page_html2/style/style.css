@@ -45,3 +45,12 @@ p{
 .titre{
 	text-decoration: underline;
 }
+
+.pied{
+	border-top: rgb(190, 28, 28) 3px;
+	height: 100px;
+}
+
+.texte_pied{
+	float: left;
+}
