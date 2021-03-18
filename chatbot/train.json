@@ -18,6 +18,7 @@
     "patterns":["je voudrais savoir quelles sont les spécialites enseignées à Jeanne d'Arc","quelles spécialités sont enseignées","j'aimerais savoir quelles sont les spécialites enseignées à Jeanne d'Arc","quel spécialiter proposer vou","spécialité"],
     "reponses":["Humanites, mathematiques avec option maths expertes ou complementaires, physique chimie, SES, SVT, NSI (meilleure matiere ;)), LLCE (literature etrangere) et géopolitique sont enseignes au lycee jeanne d'arc en classe de premiere et de terminale"],
     "context_set":""},
+    
     {"tag":"matiere",
     "patterns":["quelles matières enseigné vous","qu'elles sont les matières enseignées","quelles matières proposez vous"],
     "reponses":["Nous enseignons pour les matières obligatoires en 2nd : le français, les mathematiques, la physique-chimie, la SVT (science et vie de la terre), la SNT (science du numérique et de l'informatique), la SES (science economique et sociale), l'histoire et la geographie, l'EMC (education morale et civique), l'anglais, l'allemand, l'espagnole et le sport. En 1er : le français, l'histoire et la gegraphie, l'EMC, l'enseignement scientifique, l'anglais, l'allemand, l'espagnole et le sport. En Terminale le français sera remplacer par la phylosophie"],
