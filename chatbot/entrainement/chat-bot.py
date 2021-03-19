@@ -12,7 +12,7 @@ import json
 import time
 import os
 from tensorflow.python.framework import ops
-with open("train.json", encoding="utf-8") as file: #ouverture du fichier de données (dictionnaire python)
+with open("../train.json", encoding="utf-8") as file: #ouverture du fichier de données (dictionnaire python)
     data = json.load(file)
 
 #prédiction
@@ -37,23 +37,33 @@ def post(a) :
             window.destroy()
 
         if inp.lower() == "bad apple":
-            os.system("start cmd /k python ./ASCII_bad_apple-master/run.py")
+            os.system("start cmd /k python ../ASCII_bad_apple-master/run.py")
+            messages.insert(INSERT, '%s\n' % "Emma:")
+            messages.insert(INSERT, '%s\n' % "programme creer par Chion82 integre par Antoine Cateux et Rihan Chaudhory")
+            messages.insert(INSERT, '\n')
+            messages.insert(INSERT, '%s\n' % "vous: ")
+            input_field.delete(0, 'end')
 
+        else :
+            resultat = model.predict([traitement_des_donnees(inp, features)])
+            print("resultat", resultat)
+            if resultat[0[max(resultat[0]).split(' ')]] < 0.7 :
+                print("j\'ai pas compris")
+            else:
+                resultat_index = numpy.argmax(resultat)
+                print("resultat_index", resultat_index)
+                tag = labels[resultat_index]
 
-        resultat = model.predict([traitement_des_donnees(inp, features)])
-        resultat_index = numpy.argmax(resultat)
-        tag = labels[resultat_index]
-
-        for tg in data["intents"]:
-            if tg['tag'] == tag:
-                responses = tg['reponses']
-        aff_post = (random.choice(responses))
-        print(aff_post)
-        messages.insert(INSERT, '%s\n' % "Emma:")
-        messages.insert(INSERT, '%s\n' % aff_post)
-        messages.insert(INSERT, '\n')
-        messages.insert(INSERT, '%s\n' % "vous: ")
-        input_field.delete(0, 'end')
+                for tg in data["intents"]:
+                    if tg['tag'] == tag:
+                        responses = tg['reponses']
+                aff_post = (random.choice(responses))
+                #print(aff_post)
+                messages.insert(INSERT, '%s\n' % "Emma:")
+                messages.insert(INSERT, '%s\n' % aff_post)
+                messages.insert(INSERT, '\n')
+                messages.insert(INSERT, '%s\n' % "vous: ")
+                input_field.delete(0, 'end')
 
 
 features = []
@@ -102,7 +112,9 @@ for x,doc in enumerate(mot1):
 training = numpy.array(training)
 sortie= numpy.array(sortie)
 
-#création du réseau de neurones ici 4 neurones
+
+## résaux de neurones
+
 ops.reset_default_graph()
 net = tflearn.input_data(shape=[None, len(training[0])]) # couche d'entrer des neurones input
 # couche cachée des neurones qui vont "réfléchir" pour déterminer les règles puis les utiliser (4 couche qui continnent 16 neurones)
@@ -117,7 +129,7 @@ net = tflearn.regression(net) # prédiction de la sortie à partir de l'entrée
 model= tflearn.DNN(net)
 
 #entrainement de l'IA : n_epch=x le nombre de fois que l'on va entrainer le bot
-model.fit(training, sortie, n_epoch=100000, batch_size=140, show_metric=True)
+model.fit(training, sortie, n_epoch=10, batch_size=140, show_metric=True)
 model.save("model.tflearn")
 
 

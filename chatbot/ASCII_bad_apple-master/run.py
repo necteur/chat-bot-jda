@@ -1,7 +1,7 @@
 import time, os
 
 if __name__ == '__main__':
-	f = open('./ASCII_bad_apple-master/play.txt', 'r')
+	f = open('../ASCII_bad_apple-master/play.txt', 'r')
 	frame_raw = f.read()
 	frame_raw = frame_raw.replace('.', ' ')
 	f.close()
