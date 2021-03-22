@@ -19,8 +19,8 @@ with open("../train.json", encoding="utf-8") as file: #ouverture du fichier de d
 def traitement_des_donnees(s, features):
     bag = [0 for _ in range(len(features))]
 
-    words_tok = nltk.word_tokenize(s) # on découpe les mot d'entrée
-    words_tok = [stemmer.stem(word.lower()) for word in words_tok] # on prend les mots clefs
+    words_tok = nltk.word_tokenize(s) # on retire la ponctuation
+    words_tok = [stemmer.stem(word.lower()) for word in words_tok] # on prend les mots clefs en retirant tout les mots cour et on racourcie les mot a leur racine pour une meilleur compréenssion
 
     for se in words_tok:
         for i, w in enumerate(features):
@@ -47,25 +47,41 @@ def post(a) :
         else :
             resultat = model.predict([traitement_des_donnees(inp, features)])
             print("resultat", resultat)
-            if resultat[0[max(resultat[0]).split(' ')]] < 0.7 :
-                print("j\'ai pas compris")
-            else:
-                resultat_index = numpy.argmax(resultat)
-                print("resultat_index", resultat_index)
-                tag = labels[resultat_index]
+            #if resultat[0[max(resultat[0]).split(' ')]] < 0.7 :
+            #    print("j\'ai pas compris")
+            #else:
+            resultat_index = numpy.argmax(resultat)
+            print("resultat_index", resultat_index)
+            tag = labels[resultat_index]
 
-                for tg in data["intents"]:
-                    if tg['tag'] == tag:
-                        responses = tg['reponses']
-                aff_post = (random.choice(responses))
-                #print(aff_post)
-                messages.insert(INSERT, '%s\n' % "Emma:")
-                messages.insert(INSERT, '%s\n' % aff_post)
-                messages.insert(INSERT, '\n')
-                messages.insert(INSERT, '%s\n' % "vous: ")
-                input_field.delete(0, 'end')
+            for tg in data["intents"]:
+                if tg['tag'] == tag:
+                    responses = tg['reponses']
+            aff_post = (random.choice(responses))
+            #print(aff_post)
+            messages.insert(INSERT, '%s\n' % "Emma:")
+            messages.insert(INSERT, '%s\n' % aff_post)
+            messages.insert(INSERT, '\n')
+            messages.insert(INSERT, '%s\n' % "vous: ")
+            input_field.delete(0, 'end')
+
+## résaux de neurones
+
+ops.reset_default_graph()
+resaux_neurones = tflearn.input_data(shape=[None, len(training[0])]) # couche d'entrer des neurones input
+# couche cachée des neurones qui vont "réfléchir" pour déterminer les règles puis les utiliser (4 couche qui continnent 16 neurones)
+resaux_neurones = tflearn.fully_connected(resaux_neurones, 128)
+resaux_neurones = tflearn.fully_connected(resaux_neurones, 128)
+resaux_neurones = tflearn.fully_connected(resaux_neurones, 128)
+resaux_neurones = tflearn.fully_connected(resaux_neurones, 128)
+resaux_neurones = tflearn.fully_connected(resaux_neurones, len(sortie[0]), activation="softmax") # sortie des nerones avec "l'activation" qui va permettre de changé des nombres incompréhensibles en probabilité
+#ici la fonction d'activation utilisée est softmax +info : https://fr.wikipedia.org/wiki/Fonction_softmax
+resaux_neurones = tflearn.regression(resaux_neurones) # prédiction de la sortie à partir de l'entrée
+
+model= tflearn.DNN(resaux_neurones) #définition du model du résaux de neurones
 
 
+## lecture du dictionnaire
 features = []
 labels = []
 mot1 = []
@@ -73,16 +89,18 @@ mot2 = []
 training =[]
 sortie = []
 
-for intent in data["intents"]:      #on parcourt tout le data (ici des dictionnaires de données) qui est compris dans le dictionnaire intents
-    for pattern in intent["patterns"]:      # on parcourt le dictionnaire pour voir les différentes "feature(input que l'IA va devoir faire face)" appellé ici pattern
-        mots = nltk.word_tokenize(pattern)      # séparation des mots dans une phrase pour permettre la modularité
-        features.extend(mots)      #ajout de la liste mots à la liste features pour connaître les mots qui sont dans la "feature"
+for intent in data["intents"]:      #on parcourt tout le data (ici des dictionnaires qui contienne toutes les données) qui est compris dans le dictionnaire intents
+    for pattern in intent["patterns"]:      # on parcourt le dictionnaire pour voir les différentes "feature(entré que l'IA va devoir faire face)" appellé ici pattern
+        mots = nltk.word_tokenize(pattern)      # séparation des mots et supression de la ponctuation (accent, virgule) dans la phrase
+        features.extend(mots)      #ajout de la liste mots à la liste features pour connaître les mots qui sont dans la partie "pattern" du dictionnaire
         mot1.append(mots)
         mot2.append(intent["tag"])
 
         if intent["tag"] not in labels: # ajout de tous les types de données pour qu'ils soient par la suite traités et que aucun ne soit oublié
             labels.append(intent["tag"])
 
+
+## traitement des donnés
 features = [stemmer.stem(w.lower()) for w in features if w not in "?"] #permet d'avoir la racine des mots et de comprendre le sens des mots ex :bnjr veux dire bonjour, gentiment ==> gentil ce qui va lui permettre de comprendre des mots dérivés (ex : "il est d'un gentille" l'IA va comprendre "il est gentil")
 features = sorted(list(set(features))) # création d'une liste de mots simplifiés qui vont simplifier l'analyse des données
 
@@ -92,7 +110,7 @@ labels = sorted(labels)
 
 out_empty = [0 for _ in range(len(labels))]
 
-for x,doc in enumerate(mot1):
+for i,doc in enumerate(mot1):
     bag = []
 
     mots= [stemmer.stem(w) for w in doc]
@@ -103,7 +121,7 @@ for x,doc in enumerate(mot1):
         else:
             bag.append(0)
     sortie_row = out_empty[:]
-    sortie_row[labels.index(mot2[x])] = 1
+    sortie_row[labels.index(mot2[i])] = 1
 
     training.append(bag)
     sortie.append(sortie_row)
@@ -113,29 +131,17 @@ training = numpy.array(training)
 sortie= numpy.array(sortie)
 
 
-## résaux de neurones
 
-ops.reset_default_graph()
-net = tflearn.input_data(shape=[None, len(training[0])]) # couche d'entrer des neurones input
-# couche cachée des neurones qui vont "réfléchir" pour déterminer les règles puis les utiliser (4 couche qui continnent 16 neurones)
-net = tflearn.fully_connected(net, 128)
-net = tflearn.fully_connected(net, 128)
-net = tflearn.fully_connected(net, 128)
-net = tflearn.fully_connected(net, 128)
-net = tflearn.fully_connected(net, len(sortie[0]), activation="softmax") # sortie des nerones avec "l'activation" qui va permettre de changé des nombres incompréhensibles en probabilité
-#ici la fonction d'activation utilisée est softmax +info : https://fr.wikipedia.org/wiki/Fonction_softmax
-net = tflearn.regression(net) # prédiction de la sortie à partir de l'entrée
 
-model= tflearn.DNN(net)
-
-#entrainement de l'IA : n_epch=x le nombre de fois que l'on va entrainer le bot
+##entrainement
+#entrainement de l'IA : n_epch=x le nombre de fois que l'on va entrainer le bot, batch_size la quantité de donner que l'on donne a chaque entrainement, show_metric=True permet de montrer ce qu'il se passe pour obtenir les information tel que la précision du Chatbot
 model.fit(training, sortie, n_epoch=10, batch_size=140, show_metric=True)
-model.save("model.tflearn")
+model.save("model.tflearn") ## on enregistre les donnés
 
 
 
 
-#tkinter
+## affichage tkinter
 
 window = Tk()
 window.title("JDA chatbot : Emma")
