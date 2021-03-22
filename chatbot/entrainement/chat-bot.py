@@ -49,7 +49,6 @@ def post(a) :
             resultat = model.predict([traitement_des_donnees(inp, features)])[0]
             print("resultat", resultat)
             resultat_index = numpy.argmax(resultat)
-            print("resultat_index", resultat_index)
             tag = labels[resultat_index]
             if resultat[resultat_index] > 0.7 :
                 for tg in data["intents"]:
