@@ -15,7 +15,7 @@
     "context_set":""},
 
     {"tag":"specialite",
-    "patterns":["je voudrais savoir quelles sont les spécialites enseignées à Jeanne d'Arc","quelles spécialités sont enseignées","j'aimerais savoir quelles sont les spécialites enseignées à Jeanne d'Arc","quel spécialiter proposer vou","spécialité"],
+    "patterns":["je voudrais savoir quelles sont les spécialites enseignées à Jeanne d'Arc","quelles spécialités sont enseignées / disponibles","j'aimerais savoir quelles sont les spécialites enseignées à Jeanne d'Arc","quel spécialiter proposer vou","spécialité"],
     "reponses":["Humanites, mathematiques avec option maths expertes ou complementaires, physique chimie, SES, SVT, NSI (meilleure matiere ;)), LLCE (literature etrangere) et géopolitique sont enseignes au lycee jeanne d'arc en classe de premiere et de terminale"],
     "context_set":""},
     
@@ -134,7 +134,7 @@
     "context_set":""},
 
     {"tag":"option",
-    "patterns":["option","quelles options sont disponible","je voudrais savoir quelles options vous proposez / sont disponiblent","j'aimerais savoir quelles options sont disponiblent / vous proposez"],
+    "patterns":["option","quelles options sont disponible","je voudrais savoir quelles options vous proposez / sont disponiblent","j'aimerais savoir quelles options sont disponiblent / vous proposez","quelles options enseignez vous"],
     "reponses":["Nous proposons : math experte, math complementaire, classe europeenne (qui devient new horizons en 1er), une section anglophone, latin, espagnole et allemand LV3"],
     "context_set":""},
 
