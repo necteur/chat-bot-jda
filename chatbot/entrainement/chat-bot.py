@@ -20,23 +20,23 @@ def traitement_des_donnees(s, features):
     bag = [0 for _ in range(len(features))]
 
     words_tok = nltk.word_tokenize(s) # on retire la ponctuation
-    words_tok = [stemmer.stem(word.lower()) for word in words_tok] # on prend les mots clefs en retirant tout les mots cour et on racourcie les mot a leur racine pour une meilleur compréenssion
+    words_tok = [stemmer.stem(word.lower()) for word in words_tok] # on prend les mots clefs en retirant tout les mots courts et on racourcie les mots à leurs racines pour une meilleur compréenssion pour le chatbot
 
     for se in words_tok:
         for i, w in enumerate(features):
             if w == se:
-                bag[i] = 1
+                bag[i] = 1 #on regarde si les mot qui sont dans l'entrer sont dans notre features donc dans nos questions de base proposez à la machine
 
     return numpy.array(bag)
-
+## traitement des entrés lors de la discution
 def post(a) :
         #print("Vous pouvez commencer à parler (taper quit pour arrêter)!")
         inp = input_user.get()
-        messages.insert(INSERT, '%s\n' % inp)
+        messages.insert(INSERT, '%s\n' % inp) #insertion du message
         if inp.lower() == "quit":
             window.destroy()
 
-        if inp.lower() == "bad apple":
+        if inp.lower() == "bad apple": # lance le programme qui permet de lancer dans une console une vidéo en ASCII
             os.system("start cmd /k python ../ASCII_bad_apple-master/run.py")
             messages.insert(INSERT, '%s\n' % "Emma:")
             messages.insert(INSERT, '%s\n' % "programme creer par Chion82 integre par Antoine Cateux et Rihan Chaudhory")
@@ -47,38 +47,26 @@ def post(a) :
         else :
             resultat = model.predict([traitement_des_donnees(inp, features)])
             print("resultat", resultat)
-            #if resultat[0[max(resultat[0]).split(' ')]] < 0.7 :
-            #    print("j\'ai pas compris")
-            #else:
-            resultat_index = numpy.argmax(resultat)
-            print("resultat_index", resultat_index)
-            tag = labels[resultat_index]
+            resultat_split_ver = numpy.split(resultat, 1)
+            print(resultat_split_ver)
+            if resultat_split_ver[0[max(resultat_split_ver[0])]] < 0.7 :
+                print("j\'ai pas compris")
+            else:
+                resultat_index = numpy.argmax(resultat)
+                print("resultat_index", resultat_index)
+                tag = labels[resultat_index]
 
-            for tg in data["intents"]:
-                if tg['tag'] == tag:
-                    responses = tg['reponses']
-            aff_post = (random.choice(responses))
-            #print(aff_post)
-            messages.insert(INSERT, '%s\n' % "Emma:")
-            messages.insert(INSERT, '%s\n' % aff_post)
-            messages.insert(INSERT, '\n')
-            messages.insert(INSERT, '%s\n' % "vous: ")
-            input_field.delete(0, 'end')
+                for tg in data["intents"]:
+                    if tg['tag'] == tag:
+                        responses = tg['reponses']
+                aff_post = (random.choice(responses))
+                #print(aff_post)
+                messages.insert(INSERT, '%s\n' % "Emma:")
+                messages.insert(INSERT, '%s\n' % aff_post)
+                messages.insert(INSERT, '\n')
+                messages.insert(INSERT, '%s\n' % "vous: ")
+                input_field.delete(0, 'end')
 
-## résaux de neurones
-
-ops.reset_default_graph()
-resaux_neurones = tflearn.input_data(shape=[None, len(training[0])]) # couche d'entrer des neurones input
-# couche cachée des neurones qui vont "réfléchir" pour déterminer les règles puis les utiliser (4 couche qui continnent 16 neurones)
-resaux_neurones = tflearn.fully_connected(resaux_neurones, 128)
-resaux_neurones = tflearn.fully_connected(resaux_neurones, 128)
-resaux_neurones = tflearn.fully_connected(resaux_neurones, 128)
-resaux_neurones = tflearn.fully_connected(resaux_neurones, 128)
-resaux_neurones = tflearn.fully_connected(resaux_neurones, len(sortie[0]), activation="softmax") # sortie des nerones avec "l'activation" qui va permettre de changé des nombres incompréhensibles en probabilité
-#ici la fonction d'activation utilisée est softmax +info : https://fr.wikipedia.org/wiki/Fonction_softmax
-resaux_neurones = tflearn.regression(resaux_neurones) # prédiction de la sortie à partir de l'entrée
-
-model= tflearn.DNN(resaux_neurones) #définition du model du résaux de neurones
 
 
 ## lecture du dictionnaire
@@ -130,6 +118,20 @@ for i,doc in enumerate(mot1):
 training = numpy.array(training)
 sortie= numpy.array(sortie)
 
+## résaux de neurones
+
+ops.reset_default_graph()
+resaux_neurones = tflearn.input_data(shape=[None, len(training[0])]) # couche d'entrer des neurones input + récupération des donné pour l'entrainement
+# couche cachée des neurones qui vont "réfléchir" pour déterminer les règles puis les utiliser (4 couche qui continnent 128 neurones chaqune). Chaque neurone est connecter a tout les neurones de la couche précédente et de la couche suivante (d'où le fully_connected
+resaux_neurones = tflearn.fully_connected(resaux_neurones, 128)
+resaux_neurones = tflearn.fully_connected(resaux_neurones, 128)
+resaux_neurones = tflearn.fully_connected(resaux_neurones, 128)
+resaux_neurones = tflearn.fully_connected(resaux_neurones, 128)
+resaux_neurones = tflearn.fully_connected(resaux_neurones, len(sortie[0]), activation="softmax") # sortie des nerones avec "l'activation" qui va permettre de changé des nombres incompréhensibles en probabilité
+#ici la fonction d'activation utilisée est softmax +info : https://fr.wikipedia.org/wiki/Fonction_softmax
+resaux_neurones = tflearn.regression(resaux_neurones) # prédiction de la sortie à partir de l'entrée
+
+model= tflearn.DNN(resaux_neurones) #définition du model du résaux de neurones
 
 
 
@@ -143,15 +145,17 @@ model.save("model.tflearn") ## on enregistre les donnés
 
 ## affichage tkinter
 
-window = Tk()
+window = Tk() #création de la fenêtre
 window.title("JDA chatbot : Emma")
 messages = Text(window)
 messages.pack()
 
+#entré pour parler avec le chat bot
 input_user = StringVar()
 input_field = Entry(window, text=input_user)
 input_field.pack(side=BOTTOM, fill=X)
 
+#fenêtre où tout ce que l'on va entré et toutes les réponses vont s'afficher
 frame = Frame(window)
 input_field.bind("<Return>", post)
 messages.insert(INSERT, '%s\n' % "Vous pouvez commencer à parler (taper quit pour arrêter)")
