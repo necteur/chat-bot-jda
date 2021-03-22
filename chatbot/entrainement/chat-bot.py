@@ -45,17 +45,13 @@ def post(a) :
             input_field.delete(0, 'end')
 
         else :
-            resultat = model.predict([traitement_des_donnees(inp, features)])
-            print("resultat", resultat)
-            resultat_split_ver = numpy.split(resultat, 1)
-            print(resultat_split_ver)
-            if resultat_split_ver[0[max(resultat_split_ver[0])]] < 0.7 :
-                print("j\'ai pas compris")
-            else:
-                resultat_index = numpy.argmax(resultat)
-                print("resultat_index", resultat_index)
-                tag = labels[resultat_index]
 
+            resultat = model.predict([traitement_des_donnees(inp, features)])[0]
+            print("resultat", resultat)
+            resultat_index = numpy.argmax(resultat)
+            print("resultat_index", resultat_index)
+            tag = labels[resultat_index]
+            if resultat[resultat_index] > 0.7 :
                 for tg in data["intents"]:
                     if tg['tag'] == tag:
                         responses = tg['reponses']
@@ -63,6 +59,12 @@ def post(a) :
                 #print(aff_post)
                 messages.insert(INSERT, '%s\n' % "Emma:")
                 messages.insert(INSERT, '%s\n' % aff_post)
+                messages.insert(INSERT, '\n')
+                messages.insert(INSERT, '%s\n' % "vous: ")
+                input_field.delete(0, 'end')
+            else :
+                messages.insert(INSERT, '%s\n' % "Emma:")
+                messages.insert(INSERT, '%s\n' % "je n'ai pas compris pourriez vous reformuler votre question.")
                 messages.insert(INSERT, '\n')
                 messages.insert(INSERT, '%s\n' % "vous: ")
                 input_field.delete(0, 'end')
@@ -137,7 +139,7 @@ model= tflearn.DNN(resaux_neurones) #définition du model du résaux de neurones
 
 ##entrainement
 #entrainement de l'IA : n_epch=x le nombre de fois que l'on va entrainer le bot, batch_size la quantité de donner que l'on donne a chaque entrainement, show_metric=True permet de montrer ce qu'il se passe pour obtenir les information tel que la précision du Chatbot
-model.fit(training, sortie, n_epoch=10, batch_size=140, show_metric=True)
+model.fit(training, sortie, n_epoch=1000, batch_size=150, show_metric=True)
 model.save("model.tflearn") ## on enregistre les donnés
 
 
