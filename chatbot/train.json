@@ -1,6 +1,6 @@
 {"intents":[
     {"tag": "bonjour",
-    "patterns":["bonjour","salut","hey"],
+    "patterns":["bonjour","salut","hey","cc","bjr"],
     "reponses": ["Bonjour, en quoi puis je vous etre utile"],
     "context_set":""},
 
@@ -35,12 +35,12 @@
     "context_set":""},
 
     {"tag":"religion",
-    "patterns":["y a t il des cours de catéchisme","Les cours de religion sont ils obligatoires","les cours de cathéchisme sont ils obligatoires","le cathéchisme est il obligatoire","j'aimerais savoir si les cours de cathéchisme sont obligatoires"],
+    "patterns":["y a t il des cours de catéchisme","Les cours de religion sont ils obligatoires","les cours de cathéchisme sont ils obligatoires","le cathéchisme est il obligatoire","j'aimerais savoir si les cours de cathéchisme sont obligatoires","cathéchisme","cour de religion"],
     "reponses":["Oui les cours de cathechisme sont obligatoires mais differents parcours sont proposes aux eleves. Ces cours sont au rythme de 1 heure toutes les deux semaines"],
     "context_set":""},
 
     {"tag":"entrer_sortie",
-    "patterns":["Quand les élèves peuvent ils sortire de l'établisement","Est-ce que les élèves peuvent entrer et sortir du lycée sans controle","les élèves sont ils autorisés à sortir du batiment/lycée/établisment","J'aimerais savoir si les élèves peuvent sortir du lycée pendant les pauses"],
+    "patterns":["Quand les élèves peuvent ils sortire de l'établisement","Est-ce que les élèves peuvent entrer et sortir du lycée sans controle","les élèves sont ils autorisés à sortir du batiment/lycée/établisment","J'aimerais savoir si les élèves peuvent sortir du lycée pendant les pauses","sortie"],
     "reponses":["Les eleves de seconde ne sont pas autorises a sortir pendant les intercours, les heures d'etude et les recreations ; les premieres et les terminales peuvent sortir quand ils le souhaitent"],
     "context_set":""},
 
@@ -50,13 +50,13 @@
     "context_set":""},
 
     {"tag":"rendez vous",
-    "patterns":["Je voudrais savoir s'il faut prendre rendez-vous pour l'inscription","faut il prendre rendez-vous pour inscrire mon enfant au lycee","j'aimerais savoir s'il faut prendre rendez-vous pour l'inscription"],
+    "patterns":["Je voudrais savoir s'il faut prendre rendez-vous pour l'inscription","faut il prendre rendez-vous pour inscrire mon enfant au lycee","j'aimerais savoir s'il faut prendre rendez-vous pour l'inscription","rendez vous"],
     "reponses":["Oui, un rendez vous est necessaire avec le directeur our le co directeur pour s'incrire au lycee"],
     "context_set":""},
 
     {"tag":"numero",
-    "patterns":["Je voudrais savoir quel numero il faut appeler","Quel est le numero à appeler pour s'inscrire","Quel numéro faut-il appeler pour inscrire mon enfant","J'aimerais savoir quel numero il faut appeler","comment contacter le lycée / le bureau des inscriptions"],
-    "reponses":["Le numéro a appeler pour les inscriptions au lycee est le suivant : 04 50 28 36 14"],
+    "patterns":["Je voudrais savoir quel numero il faut appeler","Quel est le numero à appeler pour s'inscrire","Quel numéro faut-il appeler pour inscrire mon enfant","J'aimerais savoir quel numero il faut appeler","comment contacter le lycée / le bureau des inscriptions","contact","numéro"],
+    "reponses":["Le numero a appeler pour les inscriptions au lycee est le suivant : 04 50 28 36 14"],
     "context_set":""},
 
     {"tag":"etudes",
@@ -103,6 +103,7 @@
     "patterns":["comment fonctionne la cantine","fonctionnement cantine","Je voudrais savoir comment fonctionne le passage à la cantine","Comment le passage à la cantine fonctionne-t-il","J'aimerais savoir comment fonctionne le passage à la cantine"],
     "reponses":["Un ordre de passage par niveau de classe est applique à la cantine. Avec la crise COVID-19, cet ordre de passage a été modifié, laissant désormais place a un passage par classe et non par niveau. Informations supplementaires : il existe des alternatives vegetariennes pour les eleves vegetariens. Les eleves peuvent emmener leur propre repas s'ils ont un certificat medical. Le prix des repas occasionnels est de 8 euros et 50 centimes"],
     "context_set":""},
+    
     {"tag":"cantine_y_n",
     "patterns":["avez vous une cantine","y a t il une cantine","cantine"],
     "reponses":["Oui, nous avons une cantine"],
