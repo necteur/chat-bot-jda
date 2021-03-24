@@ -1,7 +1,12 @@
+import time
+print('Veuillez patienter, Emma ce réveille')
 import nltk
 from nltk.stem.lancaster import LancasterStemmer
 stemmer = LancasterStemmer()
-nltk.download('punkt')
+try :
+    import nltk.tokenize.punkt
+except:
+    nltk.download('punkt')
 
 from tkinter import *
 import numpy
@@ -9,7 +14,7 @@ import tflearn
 import tensorflow
 import random
 import json
-import time
+
 import os
 from tensorflow.python.framework import ops
 with open("../train.json", encoding="utf-8") as file: #ouverture du fichier de données (dictionnaire python)
@@ -45,12 +50,10 @@ def traitement_des_donnees(s, features):
         for i, k in enumerate(features):
             if k == j:
                 bag[i] = 1 #on regarde si les mot qui sont dans l'entrer sont dans notre features donc dans nos questions de base proposez à la machine, si oui on rajoute de la probabilité à la réponse qui corespond
-                print(bag)
 
     return numpy.array(bag) # on transforme nos résultat sous forme de probabilité
 ## traitement des entrés lors de la discution
 def post(a) :
-        #print("Vous pouvez commencer à parler (taper quit pour arrêter)!")
         inp = input_user.get()
         messages.insert(INSERT, '%s\n' % inp) #insertion du message
         if inp.lower() == "quit":
@@ -73,18 +76,19 @@ def post(a) :
                 for tg in data["intents"]:
                     if tg['tag'] == tag:
                         responses = tg['reponses']
-                aff_post = (random.choice(responses))
-                #print(aff_post)
+                aff_post = (random.choice(responses)) # on choisie une réponse au hasard dans toute les réponses proposés
                 messages.insert(INSERT, '%s\n' % "Emma:")
                 messages.insert(INSERT, '%s\n' % aff_post)
                 messages.insert(INSERT, '\n')
                 messages.insert(INSERT, '%s\n' % "vous: ")
+                messages.yview_scroll(50,"units")
                 input_field.delete(0, 'end')
             else :
                 messages.insert(INSERT, '%s\n' % "Emma:")
                 messages.insert(INSERT, '%s\n' % "je n'ai pas compris pourriez vous reformuler votre question.")
                 messages.insert(INSERT, '\n')
                 messages.insert(INSERT, '%s\n' % "vous: ")
+                messages.yview_scroll(50,"units")
                 input_field.delete(0, 'end')
 
 
@@ -117,7 +121,6 @@ labels = sorted(labels) # on organise les donnés
 
 
 sortie_vide = [0 for _ in range(len(labels))] # on fait une liste remplit de 0, que l'on remplira par la suite par des 1
-print(sortie_vide)
 
 for i,doc in enumerate(mot1):
     bag = []
@@ -147,7 +150,7 @@ sortie= numpy.array(sortie)
 ##entrainement
 #entrainement de l'IA : n_epch=x le nombre de fois que l'on va entrainer le bot, batch_size la quantité de donner que l'on donne a chaque entrainement, show_metric=True permet de montrer ce qu'il se passe pour obtenir les information tel que la précision du Chatbot
 model=res_neurones(training)
-model.fit(training, sortie, n_epoch=2000, batch_size=150, show_metric=True)
+model.fit(training, sortie, n_epoch=20, batch_size=150, show_metric=True)
 model.save("model.tflearn") ## on enregistre les donnés
 
 
@@ -157,13 +160,17 @@ model.save("model.tflearn") ## on enregistre les donnés
 
 window = Tk() #création de la fenêtre
 window.title("JDA chatbot : Emma")
+window.geometry('800x405')
 messages = Text(window)
-messages.pack()
+messages.pack(side=TOP, fill=BOTH)
 
 #entré pour parler avec le chat bot
 input_user = StringVar()
 input_field = Entry(window, text=input_user)
 input_field.pack(side=BOTTOM, fill=X)
+#scroll bar
+scroll_bar = Scrollbar(window)
+scroll_bar.pack(side=RIGHT,fill=Y)
 
 #fenêtre où tout ce que l'on va entré et toutes les réponses vont s'afficher
 frame = Frame(window)
