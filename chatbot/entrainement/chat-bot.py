@@ -15,7 +15,26 @@ from tensorflow.python.framework import ops
 with open("../train.json", encoding="utf-8") as file: #ouverture du fichier de données (dictionnaire python)
     data = json.load(file)
 
-#prédiction
+
+
+## résaux de neurones
+def res_neurones(training) :
+    ops.reset_default_graph()
+    resaux_neurones = tflearn.input_data(shape=[None, len(training[0])]) # couche d'entrer des neurones input + récupération des donné pour l'entrainement
+    # couche cachée des neurones qui vont "réfléchir" pour déterminer les règles puis les utiliser (4 couche qui continnent 128 neurones chaqune). Chaque neurone est connecter a tout les neurones de la couche précédente et de la couche suivante (d'où le fully_connected
+    resaux_neurones = tflearn.fully_connected(resaux_neurones, 128)
+    resaux_neurones = tflearn.fully_connected(resaux_neurones, 128)
+    resaux_neurones = tflearn.fully_connected(resaux_neurones, 128)
+    resaux_neurones = tflearn.fully_connected(resaux_neurones, 128)
+    resaux_neurones = tflearn.fully_connected(resaux_neurones, len(sortie[0]), activation="softmax") # sortie des nerones avec "l'activation" qui va permettre de changé des nombres incompréhensibles en probabilité
+    #ici la fonction d'activation utilisée est softmax +info : https://fr.wikipedia.org/wiki/Fonction_softmax
+    resaux_neurones = tflearn.regression(resaux_neurones) # prédiction de la sortie à partir de l'entrée
+
+    model= tflearn.DNN(resaux_neurones) #définition du model du résaux de neurones
+    return model
+
+
+##prédiction
 def traitement_des_donnees(s, features):
     bag = [0 for _ in range(len(features))]
 
@@ -90,55 +109,45 @@ for intent in data["intents"]:      #on parcourt tout le data (ici des dictionna
 
 
 ## traitement des donnés
-features = [stemmer.stem(w.lower()) for w in features if w not in "?"] #permet d'avoir la racine des mots et de comprendre le sens des mots ex :bnjr veux dire bonjour, gentiment ==> gentil ce qui va lui permettre de comprendre des mots dérivés (ex : "il est d'un gentille" l'IA va comprendre "il est gentil")
+features = [stemmer.stem(i.lower()) for i in features if i not in "?"] #permet d'avoir la racine des mots et de comprendre le sens des mots ex :bnjr veux dire bonjour, gentiment ==> gentil ce qui va lui permettre de comprendre des mots dérivés (ex : "il est d'un gentille" l'IA va comprendre "il est gentil"). On retire aussi les points d'intérogation
 features = sorted(list(set(features))) # création d'une liste de mots simplifiés qui vont simplifier l'analyse des données
 
-labels = sorted(labels)
+labels = sorted(labels) # on organise les donnés
 
 
 
-out_empty = [0 for _ in range(len(labels))]
+sortie_vide = [0 for _ in range(len(labels))] # on fait une liste remplit de 0, que l'on remplira par la suite par des 1
+print(sortie_vide)
 
 for i,doc in enumerate(mot1):
     bag = []
 
-    mots= [stemmer.stem(w) for w in doc]
+    mots= [stemmer.stem(w) for w in doc] # on prend les racines des mots de nos questions prédéfinie
 
     for w in features:
         if w in mots:
             bag.append(1)
         else:
             bag.append(0)
-    sortie_row = out_empty[:]
-    sortie_row[labels.index(mot2[i])] = 1
+    sortie_row = sortie_vide[:] #on copie la liste dans une autre liste
+    sortie_row[labels.index(mot2[i])] = 1 # on remplace les 0 par des 1
+
 
     training.append(bag)
     sortie.append(sortie_row)
 
-
+# on rend les sorties interprétables pour le résaux de neurones
 training = numpy.array(training)
 sortie= numpy.array(sortie)
 
-## résaux de neurones
 
-ops.reset_default_graph()
-resaux_neurones = tflearn.input_data(shape=[None, len(training[0])]) # couche d'entrer des neurones input + récupération des donné pour l'entrainement
-# couche cachée des neurones qui vont "réfléchir" pour déterminer les règles puis les utiliser (4 couche qui continnent 128 neurones chaqune). Chaque neurone est connecter a tout les neurones de la couche précédente et de la couche suivante (d'où le fully_connected
-resaux_neurones = tflearn.fully_connected(resaux_neurones, 128)
-resaux_neurones = tflearn.fully_connected(resaux_neurones, 128)
-resaux_neurones = tflearn.fully_connected(resaux_neurones, 128)
-resaux_neurones = tflearn.fully_connected(resaux_neurones, 128)
-resaux_neurones = tflearn.fully_connected(resaux_neurones, len(sortie[0]), activation="softmax") # sortie des nerones avec "l'activation" qui va permettre de changé des nombres incompréhensibles en probabilité
-#ici la fonction d'activation utilisée est softmax +info : https://fr.wikipedia.org/wiki/Fonction_softmax
-resaux_neurones = tflearn.regression(resaux_neurones) # prédiction de la sortie à partir de l'entrée
-
-model= tflearn.DNN(resaux_neurones) #définition du model du résaux de neurones
 
 
 
 ##entrainement
 #entrainement de l'IA : n_epch=x le nombre de fois que l'on va entrainer le bot, batch_size la quantité de donner que l'on donne a chaque entrainement, show_metric=True permet de montrer ce qu'il se passe pour obtenir les information tel que la précision du Chatbot
-model.fit(training, sortie, n_epoch=1000, batch_size=150, show_metric=True)
+model=res_neurones(training)
+model.fit(training, sortie, n_epoch=10, batch_size=150, show_metric=True)
 model.save("model.tflearn") ## on enregistre les donnés
 
 
