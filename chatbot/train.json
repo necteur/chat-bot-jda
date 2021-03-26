@@ -1,17 +1,22 @@
 {"intents":[
     {"tag": "bonjour",
     "patterns":["bonjour","salut","hey","cc","bjr"],
-    "reponses": ["Bonjour, en quoi puis je vous etre utile"],
+    "reponses": ["Bonjour, en quoi puis je vous etre utile."],
     "context_set":""},
 
     {"tag":"aurevoir",
     "patterns":["bonne journée","aurevoir","bye","merci","merci de m'avoir aidé","cordialement"],
-    "reponses":["au revoir et bonne journee"],
+    "reponses":["au revoir et bonne journee."],
+    "context_set":""},
+    
+    {"tag":"ca_va",
+    "patterns":["comment allez vous","ca va","passez vous une bonne journée"],
+    "reponses":["Je vais bien, merci."],
     "context_set":""},
 
     {"tag":"langue",
     "patterns":["je voudrais savoir quelle langue vous enseignez","je voudrais savoir quelles langues sont disponibles","je voudrais savoir quelles langues sont enseignées","j'aimerais' savoir quelles langues sont enseignées","j'aimerais savoir quelles langues sont disponibles"],
-    "reponses":["Nous enseignons : l'espagnol, l'anglais, l'allemand, le latin, nous avons une section anglophone et une section europe"],
+    "reponses":["Nous enseignons : l'espagnol, l'anglais, l'allemand, le latin, nous avons une section anglophone et une section europe."],
     "context_set":""},
 
     {"tag":"specialite",
@@ -65,7 +70,7 @@
     "context_set":""},
 
     {"tag":"messe au lycee",
-    "patterns":["messe","Je voudrais savoir si des messes sont organisees au lycee","le lycee propose-t-il des messes","y'a-t-il des moments de priere ou de messe au lycee","J'aimerais savoir si des messes sont organisees au lycee","le lycée propose t il des messes","y a-t-il des messes"],
+    "patterns":["messe","Je voudrais savoir si des messes sont organisees au lycee","le lycee propose-t-il des messes","y'a-t-il des moments de priere ou de messe au lycee","J'aimerais savoir si des messes sont organisees au lycee","le lycée propose t il des messes","y a-t-il des messes","les messes sont obligatoires","les élèves sont ils obligés de se rendre au messe organisé par le lycée"],
     "reponses":["Oui, des messes sont organisees au lycee notamment pour les fetes chretiennes, elles sont neanmoins facultatives"],
     "context_set":""},
 
@@ -128,7 +133,12 @@
     "patterns":["cambridge","Je voudrais savoir s'il est possible d'être évalué sur une langue","Y a t-il des examens en langues étrangères","J'aimerais savoir s'il est possible d'être évalué sur une langue","peut on passé le cambridge"],
     "reponses":["Il est possible de passer un test de Cambridge en anglais en terminale"],
     "context_set":""},
-
+    
+    {"tag":"cdi_y_n",
+    "patterns":["avez vous un cdi","y a t il un cdi"],
+    "reponses":["Oui le lycee a un cdi"],
+    "context_set":""},
+    
     {"tag":"cdi",
     "patterns":["cdi","Que peut-on faire au cdi","Je voudrais savoir ce que le cdi propose","qu'est-t-il possible de faire au cdi","J'aimerais savoir ce que le cdi propose"],
     "reponses":["Il est possible d'imprimer des travaux ou autres au CDI. Il est egalement possible d'utiliser les ordinateurs ou d'emprunter des livres pour une duree discutee au moment de l'emprunt"],
