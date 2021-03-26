@@ -50,6 +50,15 @@ html,body{
     padding-bottom: 3px;
     border-color: #425066;
 }
+.sommaire{
+    max-width: 50%;
+    padding-bottom: 5px;
+    height: auto;
+    line-height: 2.5;
+    text-decoration: none;
+    background-color: whitesmoke;
+    border: solid #3b475a 1px;
+}
 .text{
     margin: 20% 25% 5% 25%;
     max-width: 50%;

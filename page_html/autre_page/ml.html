@@ -25,10 +25,24 @@
     </nav>
 </header>
 <!-- fin header -->
+
 <div class="text">
+    
     <h1 class="titre">Documentation</h1>
 
-    <h2 class="sous_titre">Installation</h2>
+
+    <div class="sommaire">
+        <ul>
+            <h2 class="sous_titre">Sommaire</h2>
+            <li><a href="#installation" class="m-lien">Installation</a></li>
+            <li><a href="#demarche" class="m-lien">Démarche</a></li>
+            <li><a href="#json" class="m-lien">Stockage des metadonnées</a></li>
+            <li><a href="#traitement" class="m-lien">Traitement des données</a></li>
+            <li><a href="#ia" class="m-lien">Fonctionnement de l'IA</a></li>
+        </ul>
+    </div>
+
+    <h2 class="sous_titre" id="installation">Installation</h2>
     <p>Le chatbot à besoin de modules en plus qui ne sont pas intégrées dans python, ces modules sont essentiellement destinées à simplifier le programme.Un programme nommé setup.bat permet d'installer tout les modules nécessaires en seulement 2 cliques. Si vous voulez faire les intallations manuellement il faudra donc installer :</p><br>
     <p>- nltk avec <code>pip install nltk</code></p>
     <p>- numpy avec <code>pip install numpy</code></p>
@@ -46,16 +60,19 @@
     </div>
 
 
-    <h2 class="sous_titre">Démarche</h2>
+    <h2 class="sous_titre" id="demarche">Démarche</h2>
     <p>Le principe du chat bot est de calculer la probabilité de toute les réponses disponibles et de choisir celle qui est la plus probable d'entre elle selon lui.</p> <br>
-    <p>Pour cela on analyse tout les mots qui sont dans la phrase donné pour pouvoir ensuite regarder combien de mots sont en commun dans la phrase donné et dans les phrases du data qui sert à entrainée l'IA. L'IA va permettre de comprendre les racines des mots de savoir que gentillement peu vouloir dire gentillement et de devinée qu'elles sont les mots important de la phrase, il va donc éliminé par lui même les : un, une, de, les, le, la... . L'intérait d'utilisé l'IA est qu'elle va d'elle même deviné les règles, ce qui va lui permettre d'être flexibles sur les questions posée et donc de donnée une réponses aproprié.</p>
+    <h3 class="sous_titre" id="json">Stockage des données d'entrainement</h3>
+    <p>Nous avons donc commencer par créer un fichier json qui contient toute les donnés nécessaires pour l'entrainement du chat bot. Nous avons donc mis dans le fichier train.json un dictionnaire python qui contient : un tag, les questions types et leurs réponses.</p>
+    <h3 class="sous_titre" id="traitement">Traitement des données</h3>
+    <p>Pour analysé les données, on analyse tout les mots qui sont dans la phrase donné pour pouvoir ensuite regarder combien de mots sont en commun dans la phrase donné et dans les phrases du data qui sert à entrainée l'IA. L'IA va permettre de comprendre les racines des mots de savoir que gentillement peu vouloir dire gentillement et de devinée qu'elles sont les mots important de la phrase, il va donc éliminé par lui même les : un, une, de, les, le, la... . L'intérait d'utilisé l'IA est qu'elle va d'elle même deviné les règles, ce qui va lui permettre d'être flexibles sur les questions posée et donc de donnée une réponses aproprié.</p>
     
     
     <div class="seperation">
     </div>
 
 
-    <h2 class="sous_titre">Le fonctionnement de l'IA</h2>
+    <h2 class="sous_titre" id="ia">Le fonctionnement de l'IA</h2>
     <p>Pour ce chat bot le model choisie d'IA est le supervised learning.</p>
     <br>
     <p>Le supervised learning est une technique d'entrainement d'IA qui conssiste à donner les entrés et les sorties à un programme qui va posé les questions à l'IA qui va donné une réponse, lorsque la réponse est fausse l'IA enregistrera que cette réponse est fausse et qu'il faut donc donné une autre réponse. Lorsqu'elle a juste elle stocke la réponse juste pourvoir la redonné au moment où on lui demande.</p>
