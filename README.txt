@@ -17,4 +17,12 @@ il est OBLIGATOIRE d'intaller :
   - setup.bat (execute un programme appeller setup.py qui contient toute les installations pip)
   - pour tester l'entrainement, l'intallation de tensorflow-gpu <pip install tensorflow-gpu> (qui permet de réaliser les entrainements de l'IA avec le GPU) est fortement conseillée. Pour cela il est nécessaire de posséder un GPU de la marque NVidia (qui contient des coeur CUDA, voir model compatible : https://docs.nvidia.com/pdf/CUDA_Compatibility.pdf) et d'installer CUDA Toolkit (qui peut nesséssiter la désinstallation en cas d'erreur de NVidia frameview SDK) lien de téléchargement : https://developer.nvidia.com/cuda-downloads. Pur un tuto complet : https://www.youtube.com/watch?v=qrkEYf-YDyI
   vous pouvez aussi utilisé google colab mais il ne gère pas les interfaces graphiques, il faudra aussi selectionner dans les paramètre du notebook l'accélération TPU (qui est beaucoup plus éfficace pour l'entrainement d'IA que les GPUs) 
+
+
+Easter Egg :
+- Si vous taper <bad apple>, une vidéo de bad apple en ASCII.
+- Vous pouvez demander qu'Emma vous raconte une blague.
+- Sachez que Emma est raciste en effet elle avait tendance (lors de son dévelopement) à répondre au revoir quand on lui parlait arabe.
+
+
 Bon chat !!! ༼ つ ◕_◕ ༽つ 
