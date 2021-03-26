@@ -39,11 +39,11 @@ body{
 }
 
 p{
-	text-align: center;
+	text-align: center
 }
 
 .titre{
-	text-decoration: underline;
+	text-decoration: underline
 }
 
 .pied{
@@ -51,12 +51,23 @@ p{
 	height: 100px;
 }
 
-.texte_pied{
+.texte_pied_g{
 	float: left;
 	margin-top: 40px;
-	margin-left: 20px;
+	margin-left: 20px
+}
+
+.texte_pied_d{
+	float: right;
+	margin-top: 40px;
+	margin-right: 20px
 }
 
 img{
-    margin-left: 25%;
+    margin-left: 25%
+}
+
+.objectifs{
+	text-align: left;
+	margin-left: 25%;
 }
