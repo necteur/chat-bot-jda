@@ -65,7 +65,7 @@
     "context_set":""},
 
     {"tag":"etudes",
-    "patterns":["etude","Je voudrais savoir si des etudes surveillées sont proposées","Le lycée propose-t-il des études surveillées","J'aimerais savoir si des etudes surveillées sont proposées","comment se déroulent / fonctionnent les études"," y a t il une etude"],
+    "patterns":["etude","Je voudrais savoir si des etudes surveillées sont proposées","Le lycée propose-t-il des études surveillées","J'aimerais savoir si des etudes surveillées sont proposées","comment se déroulent les études"," y a t il une etude","comment fonctionnent les études"],
     "reponses":["Oui, des heures d'etude surveillee peuvent etre fixees pendant les heures de pause de l'eleve"],
     "context_set":""},
 
