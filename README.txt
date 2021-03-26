@@ -31,12 +31,29 @@ les cours de religions
 les autorisations de sortie (qui, quand)
 comment s'inscrire
 si il faut prendre un rendez vous pour s'inscrire
-numéro pour les informations
+numéro pour obtenir des informations
+focntionnement des études
+existance de messe
+soutien pour les matières
+si il y a des associations sportives
+taux de réussite au bac
+prix d'une anné jeanne d'arc
+fonctionnement des casiers
+organisation des manuels scolaires
+si il y a une cantine
+fonctionnement de la cantine
+transport scolaire
+les horraires de cours
+ nombre d'élèves et de classe dans l'établisment
+ test de langue officiel (Cambridge)
+ les activités disponible au cdi
+ si il y a des journées portes ouvertes
+ comment ce déroule l'orientation
 
 Easter Egg :
 - Si vous taper <bad apple>, une vidéo de bad apple en ASCII.
 - Vous pouvez demander qu'Emma vous raconte une blague.
-- Sachez que Emma est raciste en effet elle avait tendance (lors de son dévelopement) à répondre au revoir quand on lui parlait arabe.
+- Sachez que Emma est raciste en effet elle avait tendance (lors de son dévelopement) à répondre "au revoir" quand on lui parlait en arabe.
 
 
 Bon chat !!! ༼ つ ◕_◕ ༽つ 
