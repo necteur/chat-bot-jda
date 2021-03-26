@@ -3,7 +3,7 @@ LISEZ MOI LA C'EST IMPORTANT JE SAIS QUE TOUT LE MONDE ME ZAP (¬_¬ ) MAIS SANS
 ❗❗❗❗❗❗❗❗❗❗❗❗❗❗❗❗❗❗❗❗ /!\ /!\ /!\ /!\ /!\ /!\
 # chat-bot-jda
 chat bot project NSI
-but créer un chat bot qui pourra présenter le lycée JDA
+but créer un chat bot qui pourra répondre au question d'un élève qui souhaiterait s'inscrire au lycée JDA.
 
 documentation :
 tuto tensorflow : https://www.youtube.com/watch?v=tPYj3fFJGjk
@@ -44,11 +44,11 @@ si il y a une cantine
 fonctionnement de la cantine
 transport scolaire
 les horraires de cours
- nombre d'élèves et de classe dans l'établisment
- test de langue officiel (Cambridge)
- les activités disponible au cdi
- si il y a des journées portes ouvertes
- comment ce déroule l'orientation
+nombre d'élèves et de classe dans l'établisment
+test de langue officiel (Cambridge)
+les activités disponible au cdi
+si il y a des journées portes ouvertes
+comment ce déroule l'orientation
 
 Easter Egg :
 - Si vous taper <bad apple>, une vidéo de bad apple en ASCII.
