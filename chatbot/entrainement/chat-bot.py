@@ -1,12 +1,9 @@
 import time
-print('Veuillez patienter, Emma ce réveille')
+print('Veuillez patienter, Emma se réveille')
 import nltk
 from nltk.stem.lancaster import LancasterStemmer
 stemmer = LancasterStemmer()
-try :
-    import nltk.tokenize.punkt
-except:
-    nltk.download('punkt')
+nltk.download('punkt')
 
 from tkinter import *
 import numpy
@@ -150,7 +147,7 @@ sortie= numpy.array(sortie)
 ##entrainement
 #entrainement de l'IA : n_epch=x le nombre de fois que l'on va entrainer le bot, batch_size la quantité de donner que l'on donne a chaque entrainement, show_metric=True permet de montrer ce qu'il se passe pour obtenir les information tel que la précision du Chatbot
 model=res_neurones(training)
-model.fit(training, sortie, n_epoch=20, batch_size=150, show_metric=True)
+model.fit(training, sortie, n_epoch=1000, batch_size=150, show_metric=True)
 model.save("model.tflearn") ## on enregistre les donnés
 
 
