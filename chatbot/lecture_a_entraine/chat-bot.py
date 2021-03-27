@@ -150,7 +150,7 @@ sortie= numpy.array(sortie)
 ##entrainement
 #entrainement de l'IA : n_epch=x le nombre de fois que l'on va entrainer le bot, batch_size la quantité de donner que l'on donne a chaque entrainement, show_metric=True permet de montrer ce qu'il se passe pour obtenir les information tel que la précision du Chatbot
 model=res_neurones(training)
-model.fit(training, sortie, n_epoch=20, batch_size=150, show_metric=True)
+model.fit(training, sortie, n_epoch=950, batch_size=170, show_metric=True)
 model.save("model.tflearn") ## on enregistre les donnés
 
 
