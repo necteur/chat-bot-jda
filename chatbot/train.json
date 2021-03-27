@@ -15,7 +15,7 @@
     "context_set":""},
 
     {"tag":"langue",
-    "patterns":["je voudrais savoir quelle langue vous enseignez","je voudrais savoir quelles langues sont disponibles","je voudrais savoir quelles langues sont enseignées","j'aimerais' savoir quelles langues sont enseignées","j'aimerais savoir quelles langues sont disponibles"],
+    "patterns":["je voudrais savoir quelle langue vous enseignez","je voudrais savoir quelles langues sont disponibles","je voudrais savoir quelles langues sont enseignées","j'aimerais' savoir quelles langues sont enseignées","j'aimerais savoir quelles langues sont disponibles","quelles langues peut on apprendre"],
     "reponses":["Nous enseignons : l'espagnol, l'anglais, l'allemand, le latin, nous avons une section anglophone et une section europe."],
     "context_set":""},
 
@@ -40,7 +40,7 @@
     "context_set":""},
 
     {"tag":"religion",
-    "patterns":["y a t il des cours de catéchisme","Les cours de religion sont ils obligatoires","les cours de cathéchisme sont ils obligatoires","le cathéchisme est il obligatoire","j'aimerais savoir si les cours de cathéchisme sont obligatoires","cathéchisme","cour de religion"],
+    "patterns":["y a t il des cours de catéchisme","Les cours de religion sont ils obligatoires","les cours de cathéchisme sont ils obligatoires","le cathéchisme est il obligatoire","j'aimerais savoir si les cours de cathéchisme sont obligatoires","cathéchisme","cour de religion","y a t il un enseignement religieux","enseignement religieux"],
     "reponses":["Oui les cours de cathechisme sont obligatoires mais differents parcours sont proposes aux eleves. Ces cours sont au rythme de 1 heure toutes les deux semaines"],
     "context_set":""},
 
@@ -60,7 +60,7 @@
     "context_set":""},
 
     {"tag":"numero",
-    "patterns":["Je voudrais savoir quel numero il faut appeler","Quel est le numero à appeler pour s'inscrire","Quel numéro faut-il appeler pour inscrire mon enfant","J'aimerais savoir quel numero il faut appeler","comment contacter le lycée / le bureau des inscriptions","contact","numéro"],
+    "patterns":["Je voudrais savoir quel numero il faut appeler","Quel est le numero à appeler pour s'inscrire","Quel numéro faut-il appeler pour inscrire mon enfant","J'aimerais savoir quel numero il faut appeler","comment contacter le lycée / le bureau des inscriptions","contact","numéro","qui dois je contacter pour une inscription"],
     "reponses":["Le numero a appeler pour les inscriptions au lycee est le suivant : 04 50 28 36 14"],
     "context_set":""},
 
@@ -80,7 +80,7 @@
     "context_set":""},
 
     {"tag":"as",
-    "patterns":["as","Je voudrais savoir si il y des as","j'aimerais savoir si vous proposez des as sur la pause méridienne","J'aimerais savoir si il y des as"],
+    "patterns":["as","associations sportives","Je voudrais savoir si il y des as / associations sportives","j'aimerais savoir si vous proposez des as / associations sportives sur la pause méridienne","J'aimerais savoir si il y des as","avez vous des associations sportives"],
     "reponses":["Oui, nous proposons des as (temporairement suspendue du a la cirse du covid 19). Les sports sont proposes sur une affiche sur un panneau dedie. Le montant de la licence est de 20€"],
     "context_set":""},
 
@@ -90,7 +90,7 @@
     "context_set":""},
 
     {"tag":"tarifs",
-    "patterns":["tarif","prix","combien coute la scolarité","Je voudrais connaître les tarifs d'inscription","Quels sont les prix à payer pour inscrire mon enfant","Quels sont les tarifs","J'aimerais connaître les tarifs d'inscription","qu'est le prix d'une année au lycée","quels sont vos prix pour une inscription"],
+    "patterns":["tarif","prix","combien coute la scolarité","Je voudrais connaître les tarifs d'inscription","Quels sont les prix à payer pour inscrire mon enfant","Quels sont les tarifs","J'aimerais connaître les tarifs d'inscription","qu'est le prix d'une année au lycée","quels sont vos prix pour une inscription","combien coutent les études"],
     "reponses":["Les tarifs sont calculés en fonction de vos revenus, consultez ce lien pour en savoir plus : https://www.jda-gex.org/infos-pratiques/tarifs/"],
     "context_set":""},
 
