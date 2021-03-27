@@ -63,14 +63,21 @@ html,body{
     text-decoration: underline;
 }
 .bas{
+    margin-top: 10%;
+    padding-bottom: 0px;
+    margin-bottom: 0px;
     border-top: #425066 solid 2px;
-    height: 100px;
+    height: 50px;
 }
 .bas_droit{
+    margin-bottom: 0px;
+    padding-bottom: 0px;
     color: black;
     float: right;
     margin-right: 5%;
 }
 .bas_gauche{
+    margin-bottom: 0%;
+    padding-bottom: 0%;
     float: left;
 }
