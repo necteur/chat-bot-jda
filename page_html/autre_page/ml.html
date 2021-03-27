@@ -46,7 +46,7 @@
     </div>
 
     <h2 class="sous_titre" id="installation">Installation</h2>
-    <p>Le chatbot à besoin de modules en plus qui ne sont pas intégrées dans python, ces modules sont essentiellement destinées à simplifier le programme.Un programme nommé setup.bat permet d'installer tout les modules nécessaires en seulement 2 clics. Si vous voulez faire les intallations manuellement il faudra donc installer :</p><br>
+    <p>Le chatbot a besoin de modules en plus qui ne sont pas intégrées dans python, ces modules sont essentiellement destinés à simplifier le programme. Un programme nommé setup.bat ou setup.py permet d'installer tous les modules nécessaires en seulement 2 clics. Si vous voulez faire les intallations manuellement il faudra donc installer :</p><br>
     <p>- nltk avec <code>pip install nltk</code></p>
     <p>- numpy avec <code>pip install numpy</code></p>
     <p>- os avec <code>pip install os</code></p>
@@ -54,9 +54,9 @@
     <p>- json avec <code> pip install json</code></p>
     <p>- tflearn avec <code>pip install tflearn</code></p>
     <p>- tensorflow avec <code>pip install tensorflow</code></p><br>
-    <p>si vous disposé d'un GPU nvidia qui contient des cudas cores vous pouver innstaller tensorflow-gpu avec <code>pip isntall tensorflow-gpu</code> cela permeterra d'utilisé la puissance de calcule de votre gpu pour entrainée le chatbot.</p><br>
-    <br><p>Nous vous recommandons d'utiliser google colab et d'activé l'accelration par GPU ou TPU</p>
-    <br><p>retrouver toute les informations ici <a href="../../README.txt">dans le README.txt</a></p>
+    <p>si vous disposez d'un GPU nvidia qui contient des CUDA cores vous pouver installer tensorflow-gpu avec <code>pip isntall tensorflow-gpu</code> cela permettra d'utiliser la puissance de calcul de votre carte graphique (GPU) pour entrainer le chatbot.</p><br>
+    <br><p>Nous vous recommandons d'utiliser google colab et d'activer l'accellération par GPU ou TPU</p>
+    <br><p>Retrouver toutes les informations ici <a href="../../README.txt">dans le README.txt</a></p>
     
     
     <div class="seperation">
@@ -67,8 +67,8 @@
 		<li>la rapidité d'entrainement</li>
 		<li>la précision de l'entrainement qui est bien meilleur grace à l'utilisation de puissant ASIC spécialisé pour tensorflow (TPU)</p></li>
 	</ul>
-	<p> Mais cela a un inconvéniant, Google colabotory ne prend pas en charge les interfaces graphique, c'est pour cela que nous vous le recommandons que si vous voulez entrainée l'IA un grand nombre de fois</p>
-	<p> <a href="https://colab.research.google.com/drive/1lA6p7iPt-r8CL3XVxDSFeTmSrVt501GZ#scrollTo=SpdC14SxBCqv" target="_blank">Cliquez ici</a> pour accèder au notebook Google colabotory (il faudra ce connecter avec un compte google pour pouvoir éxécuté le code). Penser à vérifier que l'accélration TPU est bien activé (Modifiée ==> paramètre du notebook ==> accélration materiel ==> TPU) et que le train.json est bien importer (il suffit de le glissé dans la bare de gauche lorsque la catégorie fichier est sélectionner).</p>
+	<p> Mais cela a un inconvéniant, Google colabotory ne prend pas en charge les interfaces graphique, c'est pour cela que nous vous le recommandons que si vous voulez entrainer l'IA un grand nombre de fois</p>
+	<p> <a href="https://colab.research.google.com/drive/1lA6p7iPt-r8CL3XVxDSFeTmSrVt501GZ#scrollTo=SpdC14SxBCqv" target="_blank">Cliquez ici</a> pour accéder au notebook Google colabotory (il faudra se connecter avec un compte google pour pouvoir éxécuter le code). Penser à vérifier que l'accélration TPU est bien activé (Modifiée ==> paramètre du notebook ==> accélration materiel ==> TPU) et que le train.json est bien importer (il suffit de le glissé dans la bare de gauche lorsque la catégorie fichier est sélectionner).</p>
 	<div class="seperation">
     </div>
 
@@ -78,7 +78,7 @@
     <h3 class="sous_titre" id="json">Stockage des données d'entrainement</h3>
     <p>Nous avons donc commencer par créer un fichier json qui contient toute les donnés nécessaires pour l'entrainement du chat bot. Nous avons donc mis dans le fichier train.json un dictionnaire python qui contient : un tag, les questions types et leurs réponses.</p>
     <h3 class="sous_titre" id="traitement">Traitement des données</h3>
-    <p>Pour analysé les données, on analyse tout les mots qui sont dans la phrase donné pour pouvoir ensuite regarder combien de mots sont en commun dans la phrase donné et dans les phrases du data qui sert à entrainée l'IA. L'IA va permettre de comprendre les racines des mots de savoir que gentillement peu vouloir dire gentillement et de devinée qu'elles sont les mots important de la phrase, il va donc éliminé par lui même les : un, une, de, les, le, la... . L'intérait d'utilisé l'IA est qu'elle va d'elle même deviné les règles, ce qui va lui permettre d'être flexibles sur les questions posée et donc de donnée une réponses aproprié.</p>
+    <p>Pour analysé les données, on analyse tout les mots qui sont dans la phrase donné pour pouvoir ensuite regarder combien de mots sont en commun dans la phrase donnée et dans les phrases du data qui servent à entrainer l'IA. L'IA va permettre de comprendre les racines des mots de savoir que gentillement peu vouloir dire gentillement et de devinée qu'elles sont les mots important de la phrase, il va donc éliminé par lui même les : un, une, de, les, le, la... . L'intérait d'utilisé l'IA est qu'elle va d'elle même deviné les règles, ce qui va lui permettre d'être flexibles sur les questions posée et donc de donnée une réponses aproprié.</p>
     
     
     <div class="seperation">
