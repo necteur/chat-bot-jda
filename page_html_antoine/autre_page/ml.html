@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
     <link rel="stylesheet" href="../css/ml.css">
 
-    <title>Documentation</title>
+    <title>JDA chatbot : Documentation</title>
 </head>
 <body>
 
@@ -46,7 +46,7 @@
     </div>
 
     <h2 class="sous_titre" id="installation">Installation</h2>
-    <p>Le chatbot a besoin de modules en plus qui ne sont pas intégrées dans python, ces modules sont essentiellement destinés à simplifier le programme. Un programme nommé setup.bat ou setup.py permet d'installer tous les modules nécessaires en seulement 2 clics. Si vous voulez faire les intallations manuellement il faudra donc installer :</p><br>
+    <p>Le chatbot a besoin de modules en plus qui ne sont pas intégrés dans Python, ces modules sont essentiellement destinés à simplifier le programme. Un programme nommé setup.bat ou setup.py permet d'installer tous les modules nécessaires en seulement 2 clics. Si vous voulez faire les intallations manuellement il faudra donc installer :</p><br>
     <p>- nltk avec <code>pip install nltk</code></p>
     <p>- numpy avec <code>pip install numpy</code></p>
     <p>- os avec <code>pip install os</code></p>
@@ -55,8 +55,8 @@
     <p>- tflearn avec <code>pip install tflearn</code></p>
     <p>- tensorflow avec <code>pip install tensorflow</code></p><br>
     <p>si vous disposez d'un GPU nvidia qui contient des CUDA cores vous pouver installer tensorflow-gpu avec <code>pip isntall tensorflow-gpu</code> cela permettra d'utiliser la puissance de calcul de votre carte graphique (GPU) pour entrainer le chatbot.</p><br>
-    <br><p>Nous vous recommandons d'utiliser google colab et d'activer l'accellération par GPU ou TPU</p>
-    <br><p>Retrouver toutes les informations ici <a href="../../README.txt">dans le README.txt</a></p>
+    <br><p>Nous vous recommandons d'utiliser google colab et d'activer l'accelération par GPU ou TPU</p>
+    <br><p>Retrouvez toutes les informations ici <a href="../../README.txt">dans le README.txt</a></p>
     
     
     <div class="seperation">
@@ -65,20 +65,20 @@
 	<p>Nous vous conseillons d'utiliser google colabotory pour tester l'entrainement pour 2 raisons : <br> 
 	<ul>
 		<li>la rapidité d'entrainement</li>
-		<li>la précision de l'entrainement qui est bien meilleur grace à l'utilisation de puissant ASIC spécialisé pour tensorflow (TPU)</p></li>
+		<li>la précision de l'entrainement qui est bien meilleur grâce à l'utilisation de puissant ASIC spécialisé pour tensorflow (TPU)</p></li>
 	</ul>
-	<p> Mais cela a un inconvéniant, Google colabotory ne prend pas en charge les interfaces graphique, c'est pour cela que nous vous le recommandons que si vous voulez entrainer l'IA un grand nombre de fois</p>
-	<p> <a href="https://colab.research.google.com/drive/1lA6p7iPt-r8CL3XVxDSFeTmSrVt501GZ#scrollTo=SpdC14SxBCqv" target="_blank">Cliquez ici</a> pour accéder au notebook Google colabotory (il faudra se connecter avec un compte google pour pouvoir éxécuter le code). Penser à vérifier que l'accélration TPU est bien activé (Modifiée ==> paramètre du notebook ==> accélration materiel ==> TPU) et que le train.json est bien importer (il suffit de le glissé dans la bare de gauche lorsque la catégorie fichier est sélectionner).</p>
+	<p> Mais cela a un inconvénient, Google colabotory ne prend pas en charge les interfaces graphiques, c'est pour cela que nous vous le recommandons que si vous voulez tester l'entrainement l'IA un grand nombre de fois</p>
+	<p> <a href="https://colab.research.google.com/drive/1lA6p7iPt-r8CL3XVxDSFeTmSrVt501GZ#scrollTo=SpdC14SxBCqv" target="_blank">Cliquez ici</a> pour accéder au notebook Google colabotory (il faudra se connecter avec un compte google pour pouvoir éxécuter le code). Penser à vérifier que l'accélération TPU est bien activé (Modifiée ==> paramètre du notebook ==> accélration materiel ==> TPU) et que le train.json est bien importé (il suffit de le glisser dans la barre de gauche lorsque la catégorie fichier est sélectionnée).</p>
 	<div class="seperation">
     </div>
 
 
     <h2 class="sous_titre" id="demarche">Démarche</h2>
-    <p>Le principe du chat bot est de calculer la probabilité de toute les réponses disponibles et de choisir celle qui est la plus probable d'entre elle selon lui.</p> <br>
+    <p>Le principe du chat bot est de calculer la probabilité de toutes les réponses disponibles et de choisir celle qui est la plus probable entre toutes selon lui.</p> <br>
     <h3 class="sous_titre" id="json">Stockage des données d'entrainement</h3>
-    <p>Nous avons donc commencer par créer un fichier json qui contient toute les donnés nécessaires pour l'entrainement du chat bot. Nous avons donc mis dans le fichier train.json un dictionnaire python qui contient : un tag, les questions types et leurs réponses.</p>
+    <p>Nous avons donc commencé par créer un fichier json qui contients toutes les données nécessaires pour l'entrainement du chat bot. Nous avons donc mis dans le fichier train.json un dictionnaire python qui contient : un tag, les questions types et leurs réponses.</p>
     <h3 class="sous_titre" id="traitement">Traitement des données</h3>
-    <p>Pour analysé les données, on analyse tout les mots qui sont dans la phrase donné pour pouvoir ensuite regarder combien de mots sont en commun dans la phrase donnée et dans les phrases du data qui servent à entrainer l'IA. L'IA va permettre de comprendre les racines des mots de savoir que gentillement peu vouloir dire gentillement et de devinée qu'elles sont les mots important de la phrase, il va donc éliminé par lui même les : un, une, de, les, le, la... . L'intérait d'utilisé l'IA est qu'elle va d'elle même deviné les règles, ce qui va lui permettre d'être flexibles sur les questions posée et donc de donnée une réponses aproprié.</p>
+    <p>Pour analyser les données, on analyse tous les mots qui sont dans la phrase donnée pour pouvoir ensuite regarder combien de mots sont en commun dans les phrases du data qui servent à entrainer l'IA. L'IA va permettre de comprendre les racines des mots de savoir que gentillement peut vouloir dire gentil et de deviner quels sont les mots importants de la phrase, il va donc éliminer par lui même les : un, une, de, les, le, la... . L'intérêt d'utilisrt l'IA est qu'elle va d'elle même deviner les règles, ce qui va lui permettre d'être flexible sur les questions posées et donc de donner une réponse apropriée.</p>
     
     
     <div class="seperation">
@@ -86,9 +86,9 @@
 
 
     <h2 class="sous_titre" id="ia">Le fonctionnement de l'IA</h2>
-    <p>Pour ce chat bot le model choisie d'IA est le supervised learning.</p>
+    <p>Pour ce chat bot le modèle choisi d'IA est le supervised learning.</p>
     <br>
-    <p>Le supervised learning est une technique d'entrainement d'IA qui conssiste à donner les entrés et les sorties à un programme qui va posé les questions à l'IA qui va donné une réponse, lorsque la réponse est fausse l'IA enregistrera que cette réponse est fausse et qu'il faut donc donné une autre réponse. Lorsqu'elle a juste elle stocke la réponse juste pourvoir la redonné au moment où on lui demande.</p>
+    <p>Le supervised learning est une technique d'entrainement d'IA qui conssiste à donner les entrées et les sorties à un programme qui va poser les questions à l'IA qui va donner une réponse, lorsque la réponse est fausse l'IA enregistrera que cette réponse est fausse et qu'il faut donc donner une autre réponse. Lorsqu'elle a juste elle stocke la réponse juste pour pouvoir la redonner au moment où on lui demande.</p>
     <img src="../image/supervisedlearning.png" class="ilustration">
 </div>
 
