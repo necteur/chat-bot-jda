@@ -1,12 +1,9 @@
 import time
-print('Veuillez patienter, Emma ce réveille')
+print('Veuillez patienter, Emma se réveille')
 import nltk
 from nltk.stem.lancaster import LancasterStemmer
 stemmer = LancasterStemmer()
-try :
-    import nltk.tokenize.punkt
-except:
-    nltk.download('punkt')
+nltk.download('punkt')
 
 from tkinter import *
 import numpy
@@ -114,31 +111,28 @@ for intent in data["intents"]:      #on parcourt tout le data (ici des dictionna
 
 ## traitement des donnés
 features = [stemmer.stem(i.lower()) for i in features if i not in "?"] #permet d'avoir la racine des mots et de comprendre le sens des mots ex :bnjr veux dire bonjour, gentiment ==> gentil ce qui va lui permettre de comprendre des mots dérivés (ex : "il est d'un gentille" l'IA va comprendre "il est gentil"). On retire aussi les points d'intérogation
-features = sorted(list(set(features))) # création d'une liste de mots simplifiés qui vont simplifier l'analyse des données
+features = sorted(list(set(features))) # création d'une liste de mots simplifiés(sans doublons et dans un ordre logique) qui vont simplifier l'analyse des données
 
 labels = sorted(labels) # on organise les donnés
 
 
-
-sortie_vide = [0 for _ in range(len(labels))] # on fait une liste remplit de 0, que l'on remplira par la suite par des 1
+#création d'un "bag of words" pour que le chat bot puisse comprendre les mots
+sortie_vide = [0 for _ in range(len(labels))] # on fait une liste remplit de 0, que l'on remplira par la suite par des 1, on met le même nombre de 0 que de mots. On les remplacera par des nombres pour voir leurs fréquences dans les phrases
 
 for i,doc in enumerate(mot1):
     bag = []
 
     mots= [stemmer.stem(w) for w in doc] # on prend les racines des mots de nos questions prédéfinie
 
-    for w in features:
-        if w in mots:
+    for j in features: # on rajoute les fréquences
+        if j in mots:
             bag.append(1)
         else:
             bag.append(0)
     sortie_row = sortie_vide[:] #on copie la liste dans une autre liste
-    sortie_row[labels.index(mot2[i])] = 1 # on remplace les 0 par des 1
-
-
+    sortie_row[labels.index(mot2[i])] = 1 # on remplace les 0 par des 1 aux emplacement des mots qui existe dans nos phrases
     training.append(bag)
     sortie.append(sortie_row)
-
 # on rend les sorties interprétables pour le résaux de neurones
 training = numpy.array(training)
 sortie= numpy.array(sortie)
@@ -148,7 +142,7 @@ sortie= numpy.array(sortie)
 
 
 ##entrainement
-#entrainement de l'IA : n_epch=x le nombre de fois que l'on va entrainer le bot, batch_size la quantité de donner que l'on donne à chaque entrainement, show_metric=True permet de montrer ce qu'il se passe pour obtenir les information tel que la précision du Chatbot
+#entrainement de l'IA : n_epch=x le nombre de fois que l'on va entrainer le bot, batch_size la quantité de donner que l'on donne a chaque entrainement, show_metric=True permet de montrer ce qu'il se passe pour obtenir les information tel que la précision du Chatbot
 model=res_neurones(training)
 model.fit(training, sortie, n_epoch=950, batch_size=176, show_metric=True)
 model.save("model.tflearn") ## on enregistre les donnés
