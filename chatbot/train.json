@@ -26,7 +26,7 @@
     
     {"tag":"matiere",
     "patterns":["quelles matières enseignez vous","qu'elles sont les matières enseignées","quelles matières proposez vous"],
-    "reponses":["Nous enseignons pour les matières obligatoires en 2nd : le français, les mathematiques, la physique-chimie, la SVT (science et vie de la terre), la SNT (science du numérique et de l'informatique), la SES (science economique et sociale), l'histoire et la geographie, l'EMC (education morale et civique), l'anglais, l'allemand, l'espagnol et le sport. En 1er : le français, l'histoire et la geographie, l'EMC, l'enseignement scientifique, l'anglais, l'allemand, l'espagnol et le sport. En Terminale le français sera remplacé par la phylosophie"],
+    "reponses":["Nous enseignons pour les matières obligatoires en 2nd : le français, les mathematiques, la physique-chimie, la SVT (science et vie de la terre), la SNT (science du numérique et de l'informatique), la SES (science economique et sociale), l'histoire et la geographie, l'EMC (education morale et civique), l'anglais, l'allemand, l'espagnol et le sport. En 1er : le français, l'histoire et la geographie, l'EMC, l'enseignement scientifique, l'anglais, l'allemand, l'espagnol et le sport. En Terminale le français sera remplacé par la philosophie"],
     "context_set":""},
 
     {"tag":"menu",
@@ -166,7 +166,7 @@
  
     {"tag":"avast",
     "patterns":["tu du du"],
-    "reponses":["Une menace a ete detecte","La base virale VPS a ete mise a jour"],
+    "reponses":["Une menace a ete detectee","La base virale VPS a ete mise a jour"],
     "context_set":""}
 ]
 }
