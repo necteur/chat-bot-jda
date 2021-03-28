@@ -70,7 +70,7 @@ def post(a) :
             resultat_index = numpy.argmax(resultat) # nous renvoie l'index de la plus grande valeur dans notre liste de probalité des réponses prédéfinie
             tag = labels[resultat_index]
             if resultat[resultat_index] > 0.65 : # on regarde si la plus grande probabilité est supérieur à 0.65 pour savoir si la réponse est fiable
-                for tg in data["intents"]:
+                for tg in data["meta"]:
                     if tg['tag'] == tag:
                         responses = tg['reponses']
                 aff_post = (random.choice(responses)) # on choisie une réponse au hasard dans toute les réponses proposés
@@ -98,7 +98,7 @@ mot2 = []
 training =[]
 sortie = []
 
-for intent in data["intents"]:      #on parcourt tout le data (ici des dictionnaires qui contienne toutes les données) qui est compris dans le dictionnaire intents
+for intent in data["meta"]:      #on parcourt tout le data (ici des dictionnaires qui contienne toutes les données) qui est compris dans le dictionnaire meta
     for pattern in intent["patterns"]:      # on parcourt le dictionnaire pour voir les différentes "feature(entré que l'IA va devoir faire face)" appellé ici pattern
         mots = nltk.word_tokenize(pattern)      # séparation des mots et supression de la ponctuation (accent, virgule) dans la phrase
         features.extend(mots)      #ajout de la liste mots à la liste features pour connaître les mots qui sont dans la partie "pattern" du dictionnaire

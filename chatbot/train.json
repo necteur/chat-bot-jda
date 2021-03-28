@@ -1,4 +1,4 @@
-{"intents":[
+{"meta":[
     {"tag": "bonjour",
     "patterns":["bonjour","salut","hey","cc","bjr"],
     "reponses": ["Bonjour, en quoi puis je vous etre utile."],

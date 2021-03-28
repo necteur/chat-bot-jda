@@ -70,7 +70,7 @@ def post(a) :
             resultat_index = numpy.argmax(resultat) # nous renvoie l'index de la plus grande valeur dans notre liste de probalité des réponses prédéfinie
             tag = labels[resultat_index]
             if resultat[resultat_index] > 0.65 : # on regarde si la plus grande probabilité est supérieur à 0.65 pour savoir si la réponse est fiable
-                for tg in data["intents"]:
+                for tg in data["meta"]:
                     if tg['tag'] == tag:
                         responses = tg['reponses']
                 aff_post = (random.choice(responses)) # on choisie une réponse au hasard dans toute les réponses proposés
@@ -89,53 +89,56 @@ def post(a) :
                 input_field.delete(0, 'end')
 
 
+try :
+    with open("data.pickle", "rb") as f:
+        words, labels, training, output =pickle.load(f)
+except:
+    ## lecture du dictionnaire
+    features = []
+    labels = []
+    mot1 = []
+    mot2 = []
+    training =[]
+    sortie = []
 
-## lecture du dictionnaire
-features = []
-labels = []
-mot1 = []
-mot2 = []
-training =[]
-sortie = []
+    for intent in data["meta"]:      #on parcourt tout le data (ici des dictionnaires qui contienne toutes les données) qui est compris dans le dictionnaire meta
+        for pattern in intent["patterns"]:      # on parcourt le dictionnaire pour voir les différentes "feature(entré que l'IA va devoir faire face)" appellé ici pattern
+            mots = nltk.word_tokenize(pattern)      # séparation des mots et supression de la ponctuation (accent, virgule) dans la phrase
+            features.extend(mots)      #ajout de la liste mots à la liste features pour connaître les mots qui sont dans la partie "pattern" du dictionnaire
+            mot1.append(mots)
+            mot2.append(intent["tag"])
 
-for intent in data["intents"]:      #on parcourt tout le data (ici des dictionnaires qui contienne toutes les données) qui est compris dans le dictionnaire intents
-    for pattern in intent["patterns"]:      # on parcourt le dictionnaire pour voir les différentes "feature(entré que l'IA va devoir faire face)" appellé ici pattern
-        mots = nltk.word_tokenize(pattern)      # séparation des mots et supression de la ponctuation (accent, virgule) dans la phrase
-        features.extend(mots)      #ajout de la liste mots à la liste features pour connaître les mots qui sont dans la partie "pattern" du dictionnaire
-        mot1.append(mots)
-        mot2.append(intent["tag"])
-
-        if intent["tag"] not in labels: # ajout de tous les types de données pour qu'ils soient par la suite traités et que aucun ne soit oublié
-            labels.append(intent["tag"])
-
-
-## traitement des donnés
-features = [stemmer.stem(i.lower()) for i in features if i not in "?"] #permet d'avoir la racine des mots et de comprendre le sens des mots ex :bnjr veux dire bonjour, gentiment ==> gentil ce qui va lui permettre de comprendre des mots dérivés (ex : "il est d'un gentille" l'IA va comprendre "il est gentil"). On retire aussi les points d'intérogation
-features = sorted(list(set(features))) # création d'une liste de mots simplifiés(sans doublons et dans un ordre logique) qui vont simplifier l'analyse des données
-
-labels = sorted(labels) # on organise les donnés
+            if intent["tag"] not in labels: # ajout de tous les types de données pour qu'ils soient par la suite traités et que aucun ne soit oublié
+                labels.append(intent["tag"])
 
 
-#création d'un "bag of words" pour que le chat bot puisse comprendre les mots
-sortie_vide = [0 for _ in range(len(labels))] # on fait une liste remplit de 0, que l'on remplira par la suite par des 1, on met le même nombre de 0 que de mots. On les remplacera par des nombres pour voir leurs fréquences dans les phrases
+    ## traitement des donnés
+    features = [stemmer.stem(i.lower()) for i in features if i not in "?"] #permet d'avoir la racine des mots et de comprendre le sens des mots ex :bnjr veux dire bonjour, gentiment ==> gentil ce qui va lui permettre de comprendre des mots dérivés (ex : "il est d'un gentille" l'IA va comprendre "il est gentil"). On retire aussi les points d'intérogation
+    features = sorted(list(set(features))) # création d'une liste de mots simplifiés(sans doublons et dans un ordre logique) qui vont simplifier l'analyse des données
 
-for i,doc in enumerate(mot1):
-    bag = []
+    labels = sorted(labels) # on organise les donnés
 
-    mots= [stemmer.stem(w) for w in doc] # on prend les racines des mots de nos questions prédéfinie
 
-    for j in features: # on rajoute les fréquences
-        if j in mots:
-            bag.append(1)
-        else:
-            bag.append(0)
-    sortie_row = sortie_vide[:] #on copie la liste dans une autre liste
-    sortie_row[labels.index(mot2[i])] = 1 # on remplace les 0 par des 1 aux emplacement des mots qui existe dans nos phrases
-    training.append(bag)
-    sortie.append(sortie_row)
-# on rend les sorties interprétables pour le résaux de neurones
-training = numpy.array(training)
-sortie= numpy.array(sortie)
+    #création d'un "bag of words" pour que le chat bot puisse comprendre les mots
+    sortie_vide = [0 for _ in range(len(labels))] # on fait une liste remplit de 0, que l'on remplira par la suite par des 1, on met le même nombre de 0 que de mots. On les remplacera par des nombres pour voir leurs fréquences dans les phrases
+
+    for i,doc in enumerate(mot1):
+        bag = []
+
+        mots= [stemmer.stem(w) for w in doc] # on prend les racines des mots de nos questions prédéfinie
+
+        for j in features: # on rajoute les fréquences
+            if j in mots:
+                bag.append(1)
+            else:
+                bag.append(0)
+        sortie_row = sortie_vide[:] #on copie la liste dans une autre liste
+        sortie_row[labels.index(mot2[i])] = 1 # on remplace les 0 par des 1 aux emplacement des mots qui existe dans nos phrases
+        training.append(bag)
+        sortie.append(sortie_row)
+    # on rend les sorties interprétables pour le résaux de neurones
+    training = numpy.array(training)
+    sortie= numpy.array(sortie)
 
 
 
@@ -144,8 +147,12 @@ sortie= numpy.array(sortie)
 ##entrainement
 #entrainement de l'IA : n_epch=x le nombre de fois que l'on va entrainer le bot, batch_size la quantité de donner que l'on donne a chaque entrainement, show_metric=True permet de montrer ce qu'il se passe pour obtenir les information tel que la précision du Chatbot
 model=res_neurones(training)
-model.fit(training, sortie, n_epoch=950, batch_size=176, show_metric=True)
-model.save("model.tflearn") ## on enregistre les donnés
+try :
+    model.load("model.tflearn")
+except:
+
+    model.fit(training, sortie, n_epoch=950, batch_size=176, show_metric=True)
+    model.save("model.tflearn") ## on enregistre les donnés
 
 
 
