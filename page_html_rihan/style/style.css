@@ -76,3 +76,87 @@ img{
 	text-align: right;
 	margin-right: 25%;
 }
+
+.container{
+    position: relative;
+    width: 1200px;
+    height: 300px;
+    margin: 240px auto;
+    margin-top: 100px;
+    margin-bottom: 100px;
+}
+.container .box{
+    position:  relative;
+    width: 370px;
+    height: 270px;
+    background: #425066;
+    float: left;
+    margin: 15px;
+    box-sizing: border-box;
+    overflow: hidden;
+    border-radius: 10px;
+}
+.container .box .icon{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #5250d4;
+    transition: 0.5s;
+    z-index: 1;
+}
+.container .box:hover .icon{
+    top: 20px;
+    left: calc(50% - 40px) ;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+}
+.container .box .icon .fas{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 80px;
+    transition:  0.5s;
+    color: #fff;
+}
+.container .box:hover .icon .fas{
+    font-size: 40px;
+}
+.container .box .content{
+    position: relative;
+    top: 100%;
+    height: calc(100% - 100px);
+    text-align: center;
+    padding: 20px;
+    box-sizing: border-box;
+    transition: 0.5s;
+}
+.container .box:hover .content{
+    top: 100px;
+}
+.container .box .content h3{
+    margin: 0;
+    padding: 0;
+    color: white;
+    text-transform: uppercase;
+}
+.container .box .content p{
+    margin: 0;
+    padding: 0;
+    color: white;
+}
+.container .box .icon .fab{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 80px;
+    transition:  0.5s;
+    color: #fff;
+}
+.container .box:hover .icon .fab{
+    font-size: 40px;
+}
