@@ -69,7 +69,7 @@ def post(a) :
             resultat = model.predict([traitement_des_donnees(inp, features)])[0] # retourne une probabilité de toute les réponses prédéfinies soient la bonne
             resultat_index = numpy.argmax(resultat) # nous renvoie l'index de la plus grande valeur dans notre liste de probalité des réponses prédéfinie
             tag = labels[resultat_index]
-            if resultat[resultat_index] > 0.65 : # on regarde si la plus grande probabilité est supérieur à 0.65 pour savoir si la réponse est fiable
+            if resultat[resultat_index] > 0.7 : # on regarde si la plus grande probabilité est supérieur à 0.7 pour savoir si la réponse est fiable
                 for tg in data["meta"]:
                     if tg['tag'] == tag:
                         responses = tg['reponses']
