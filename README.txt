@@ -16,7 +16,9 @@ le programme ne fonctionne pas avec les librairies intégrées de base dans pyth
 il est OBLIGATOIRE d'intaller :
   - setup.bat (execute un programme appeller setup.py qui contient toute les installations pip)
   - pour tester l'entrainement, l'intallation de tensorflow-gpu <pip install tensorflow-gpu> (qui permet de réaliser les entrainements de l'IA avec le GPU) est fortement conseillée. Pour cela il est nécessaire de posséder un GPU de la marque NVidia (qui contient des coeurs CUDA, voir modèle compatible : https://docs.nvidia.com/pdf/CUDA_Compatibility.pdf) et d'installer CUDA Toolkit (qui peut nécessiter la désinstallation en cas d'erreur de NVidia frameview SDK) lien de téléchargement : https://developer.nvidia.com/cuda-downloads. Pour un tuto complet : https://www.youtube.com/watch?v=qrkEYf-YDyI
-  vous pouvez aussi utiliser google colab mais il ne gère pas les interfaces graphiques, il faudra aussi selectionner dans les paramètre du notebook l'accélération TPU (qui est beaucoup plus éfficace pour l'entrainement d'IA que les GPUs) 
+  vous pouvez aussi utiliser google colab mais il ne gère pas les interfaces graphiques, il faudra aussi selectionner dans les paramètre du notebook l'accélération TPU (qui est beaucoup plus éfficace pour l'entrainement d'IA que les GPUs)
+  
+ Pensé à exécuter le programmes avec ctr + shift + E ou Run ==> Run file as script
 
 Questions disponibles :
 Bonjour
@@ -52,7 +54,7 @@ comment se déroule l'orientation
 
 Easter Egg :
 - Si vous taper <bad apple>, une vidéo de bad apple en ASCII.
-- tu du du, réponse : la base virale VPS a été mise à jour
+- avast s'est invité chez Emma (écrivez : tu du du)
 - Vous pouvez demander qu'Emma vous raconte une blague.
 
 
